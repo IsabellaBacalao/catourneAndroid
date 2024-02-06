@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="color_background_frag_choix_des_joueurs">#f59e42</color>
+    <color name="color_background_frag_home">#7542f5</color>
+
 </resources>
