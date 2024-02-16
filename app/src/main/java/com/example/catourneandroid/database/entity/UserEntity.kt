@@ -1,5 +1,6 @@
 package com.example.catourneandroid.database.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.ForeignKey
@@ -23,7 +24,7 @@ import androidx.room.ForeignKey
 )
 data class UserEntity(
     @PrimaryKey val idPseudo: Int,
-    val pseudo: String,
-    val idScore: Int,
-    val idTeam: Int
+    @ColumnInfo(name = "my_pseudo") val pseudo: String,
+    @ColumnInfo(name = "id_score") val idScore: Int,
+    @ColumnInfo(name = "id_team") val idTeam: Int
 )

@@ -1,5 +1,6 @@
 package com.example.catourneandroid.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -10,7 +11,7 @@ import com.example.catourneandroid.database.entity.UserEntity
 
 interface UserDao {
     @Query("SELECT * FROM UserEntity")
-    fun getAllUsers(): List<UserEntity>
+    fun getAllUsers(): LiveData<List<UserEntity>>
 
     /*@Query("SELECT * FROM user WHERE uid IN (:userIds)")
     fun loadAllByIds(userIds: IntArray): List<User>
@@ -25,12 +26,12 @@ interface UserDao {
     @Insert
     suspend fun insertUser(user: UserEntity)
 
-    /*suspend fun insertData(userDao: UserDao, scoreDao: ScoreDao, teamDao: TeamDao) {
+    suspend fun insertData(userDao: UserDao, scoreDao: ScoreDao, teamDao: TeamDao) {
 
         val user = UserEntity(idPseudo = 1, pseudo = "User1", idScore = 1, idTeam = 1)
 
         userDao.insertUser(user)
-    }*/
+    }
 
     @Delete
     fun delete(user: UserEntity)
