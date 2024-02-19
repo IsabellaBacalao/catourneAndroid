@@ -2,60 +2,68 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
-<TextView
-        android:id="@+id/title_players"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="85dp"
-        android:text="Choix des joueurs"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+    android:background="@drawable/background_players">
+
 
     <HorizontalScrollView
-        android:layout_width="wrap_content"
+        android:id="@+id/ScrollViewPlayers"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title_players"
+        android:layout_above="@+id/input_text_players"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-18dp"
+        android:layout_marginTop="201dp"
+        android:layout_marginBottom="-5dp"
         android:orientation="horizontal"
-        android:scrollbars="horizontal"
-        android:id="@+id/ScrollViewPlayers">
+        android:scrollbars="horizontal">
+
         <LinearLayout
             android:id="@+id/layout_players_zone"
-            android:layout_width="match_parent"
-            android:layout_margin="34dp"
+            android:layout_width="200dp"
             android:layout_height="50dp"
-            android:orientation="horizontal">
-        </LinearLayout>
+            android:layout_margin="34dp"
+            android:orientation="horizontal" />
     </HorizontalScrollView>
-
 
     <EditText
         android:id="@+id/input_text_players"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/title_players"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="247dp"
-        android:layout_marginEnd="148dp"
-        android:hint="Input"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="256dp"
+        android:layout_toStartOf="@+id/button_add_player"
+        android:hint="@string/input"
+        android:importantForAutofill="no"
+        android:inputType="textShortMessage"
         android:textColor="@color/white"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:textStyle="bold" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button_add_player"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="267dp"
+        android:background="@drawable/plus_button"
+        android:contentDescription="@string/plus_button" />
+
+    <Button
+        android:id="@+id/btnStartAGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:layout_marginLeft="285dp"
-        android:text="+++" />
-
-
-
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="66dp"
+        android:background="@color/color_button_begin"
+        android:text="Commencer"
+        android:textSize="24sp"
+        android:textStyle="italic" />
 
 </RelativeLayout>
 
