@@ -8,10 +8,12 @@ MERGED from [com.google.android.material:material:1.11.0] /Users/mac-IBACAL31/.g
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/mac-IBACAL31/.gradle/caches/transforms-3/4e02433abdf738f8fd561c48b0279f32/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/1c2b95e79b3b84833e5d8799ad3f29d1/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dbe3962d9aec76139097d4ab0707e85b/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment-ktx:1.2.5] /Users/mac-IBACAL31/.gradle/caches/transforms-3/ea968dc54c14458e634793b97e338f4d/transformed/fragment-ktx-1.2.5/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/348e5e8e2744bf678587b3e1256d9fd2/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/be554354f11e19abc6f185866628b961/transformed/emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/625fbf41786ffc45fa096f951cd2af8b/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/mac-IBACAL31/.gradle/caches/transforms-3/bc4895871d907b9ff95e47b1550c9f7e/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/f804fd5eb4b5ebc46395879d195515f3/transformed/activity-ktx-1.8.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.activity:activity:1.8.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/73064ef97e7ccba96d2d3e6e0781c50b/transformed/activity-1.8.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/116e1cc5538cb0b696b9ac611100f1df/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/b72d40ca4c0880ebd6f3d888d4f8bae8/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -25,31 +27,31 @@ MERGED from [androidx.loader:loader:1.0.0] /Users/mac-IBACAL31/.gradle/caches/tr
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/bcfb46fb77e495bad5635ae20916d878/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.1.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/6cd1a2f6ca2bdebec0076392e1ec4591/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.12.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/0a992fb69dfaf79798dac4d49b167158/transformed/core-1.12.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/940bdf68fab2906ba8568ec158275b00/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/8c94d522c77e4e34e35915ee735c788f/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/8fc3f82e0ef5bcef20d7d6be1366e35b/transformed/lifecycle-runtime-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/1530ba6041df261d7e8d423f729fcfcd/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/10b81544a916cab592eb2651dab8e986/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/bcf2c25e13d668ad0fbdfa74176110ab/transformed/lifecycle-livedata-core-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/86513c0c259030afb5eb17810ca6394a/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/17d357426bf5f0924d8916bed0c19110/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/43482633595538bedd55770640d20f9a/transformed/lifecycle-viewmodel-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/8c12a18c61d2b8f27dbcddb909cc623a/transformed/lifecycle-runtime-2.6.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/7f3bd380f48798031e65da68d4b85c1f/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-ktx:1.12.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/3b9ae2c6c82b4429739cced470af4bdd/transformed/core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
-MERGED from [androidx.room:room-paging:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/d5d29982626da9189ed1b313158de3b9/transformed/room-paging-2.5.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.room:room-ktx:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/abca8b2b00b0170b0ddf8b3b065af0c6/transformed/room-ktx-2.5.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.room:room-rxjava2:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/f6803b9e790afe77d3419a8b6fdcdaa7/transformed/room-rxjava2-2.5.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.room:room-rxjava3:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/026da20766ab4dadc2225768939682b5/transformed/room-rxjava3-2.5.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.room:room-guava:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/18d96afbf15309f5273ef167763e5f6c/transformed/room-guava-2.5.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.room:room-runtime:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dee0bf12b84abbd7381a59226948432b/transformed/room-runtime-2.5.0/AndroidManifest.xml:17:1-31:12
-MERGED from [androidx.sqlite:sqlite-framework:2.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/1ee483b442d282728729010165eaec56/transformed/sqlite-framework-2.3.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.sqlite:sqlite:2.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/d44fe13c83261b5fa9c397c4f914e783/transformed/sqlite-2.3.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b5da5969a88e32ed3e3707dd5ece891/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.room:room-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/590d0e1a78690db1cca4fdeaf11670cc/transformed/room-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/64bf4391386c2b5ff0b01d1096da5b0a/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/bdf9db210125e7a59250623e203ada58/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/228863afcbb817ea985f101a96bc5f44/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/aa20b87b88f8dd1836ed43601616dfb1/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/1a4354d61b59807c0c9032b03bfb82b1/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/c8a1f78857fe3061c3dd6a3d6e795149/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/639cb588ab3a5379d9c83fa9a0a65980/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/f2ce2b6de87e68a81be18aa7567d2083/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/8025a341fde4862027ae497659bfbf3c/transformed/profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/29f35b1eaf4a12c52ca9009fa587c761/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/d9bfbb567dc0fb9a294328bf90635ba7/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/c8a1f78857fe3061c3dd6a3d6e795149/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/e6dc925cabb5acfa3cfc75e9cd475c4d/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b7d55fe029a2eba4bb51a5ce4447b76/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/97503625c446e69f8ac7bdf386d9da09/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -76,8 +78,8 @@ MERGED from [androidx.core:core:1.12.0] /Users/mac-IBACAL31/.gradle/caches/trans
 MERGED from [androidx.core:core:1.12.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/0a992fb69dfaf79798dac4d49b167158/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/10b81544a916cab592eb2651dab8e986/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/10b81544a916cab592eb2651dab8e986/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:23:5-33:19
-MERGED from [androidx.room:room-runtime:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dee0bf12b84abbd7381a59226948432b/transformed/room-runtime-2.5.0/AndroidManifest.xml:23:5-29:19
-MERGED from [androidx.room:room-runtime:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dee0bf12b84abbd7381a59226948432b/transformed/room-runtime-2.5.0/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b5da5969a88e32ed3e3707dd5ece891/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b5da5969a88e32ed3e3707dd5ece891/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/f2ce2b6de87e68a81be18aa7567d2083/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/f2ce2b6de87e68a81be18aa7567d2083/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/8025a341fde4862027ae497659bfbf3c/transformed/profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
@@ -134,6 +136,8 @@ MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/mac-IBACAL31/.
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/1c2b95e79b3b84833e5d8799ad3f29d1/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dbe3962d9aec76139097d4ab0707e85b/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dbe3962d9aec76139097d4ab0707e85b/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment-ktx:1.2.5] /Users/mac-IBACAL31/.gradle/caches/transforms-3/ea968dc54c14458e634793b97e338f4d/transformed/fragment-ktx-1.2.5/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.5] /Users/mac-IBACAL31/.gradle/caches/transforms-3/ea968dc54c14458e634793b97e338f4d/transformed/fragment-ktx-1.2.5/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/348e5e8e2744bf678587b3e1256d9fd2/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/348e5e8e2744bf678587b3e1256d9fd2/transformed/emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.emoji2:emoji2:1.2.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/be554354f11e19abc6f185866628b961/transformed/emoji2-1.2.0/AndroidManifest.xml:21:5-44
@@ -142,6 +146,8 @@ MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/mac-IBACAL31/.gradle/c
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/625fbf41786ffc45fa096f951cd2af8b/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/mac-IBACAL31/.gradle/caches/transforms-3/bc4895871d907b9ff95e47b1550c9f7e/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] /Users/mac-IBACAL31/.gradle/caches/transforms-3/bc4895871d907b9ff95e47b1550c9f7e/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/f804fd5eb4b5ebc46395879d195515f3/transformed/activity-ktx-1.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/f804fd5eb4b5ebc46395879d195515f3/transformed/activity-ktx-1.8.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.activity:activity:1.8.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/73064ef97e7ccba96d2d3e6e0781c50b/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.8.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/73064ef97e7ccba96d2d3e6e0781c50b/transformed/activity-1.8.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/116e1cc5538cb0b696b9ac611100f1df/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
@@ -168,10 +174,18 @@ MERGED from [androidx.customview:customview:1.1.0] /Users/mac-IBACAL31/.gradle/c
 MERGED from [androidx.customview:customview:1.1.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/6cd1a2f6ca2bdebec0076392e1ec4591/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.12.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/0a992fb69dfaf79798dac4d49b167158/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.12.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/0a992fb69dfaf79798dac4d49b167158/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/940bdf68fab2906ba8568ec158275b00/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/940bdf68fab2906ba8568ec158275b00/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/8c94d522c77e4e34e35915ee735c788f/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/8c94d522c77e4e34e35915ee735c788f/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/8fc3f82e0ef5bcef20d7d6be1366e35b/transformed/lifecycle-runtime-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/8fc3f82e0ef5bcef20d7d6be1366e35b/transformed/lifecycle-runtime-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/1530ba6041df261d7e8d423f729fcfcd/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/1530ba6041df261d7e8d423f729fcfcd/transformed/lifecycle-viewmodel-ktx-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/10b81544a916cab592eb2651dab8e986/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/10b81544a916cab592eb2651dab8e986/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/bcf2c25e13d668ad0fbdfa74176110ab/transformed/lifecycle-livedata-core-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/bcf2c25e13d668ad0fbdfa74176110ab/transformed/lifecycle-livedata-core-ktx-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/86513c0c259030afb5eb17810ca6394a/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/86513c0c259030afb5eb17810ca6394a/transformed/lifecycle-livedata-core-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/17d357426bf5f0924d8916bed0c19110/transformed/lifecycle-livedata-2.6.1/AndroidManifest.xml:20:5-44
@@ -184,28 +198,22 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/mac
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/7f3bd380f48798031e65da68d4b85c1f/transformed/lifecycle-viewmodel-savedstate-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core-ktx:1.12.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/3b9ae2c6c82b4429739cced470af4bdd/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.12.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/3b9ae2c6c82b4429739cced470af4bdd/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.room:room-paging:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/d5d29982626da9189ed1b313158de3b9/transformed/room-paging-2.5.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-paging:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/d5d29982626da9189ed1b313158de3b9/transformed/room-paging-2.5.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-ktx:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/abca8b2b00b0170b0ddf8b3b065af0c6/transformed/room-ktx-2.5.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-ktx:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/abca8b2b00b0170b0ddf8b3b065af0c6/transformed/room-ktx-2.5.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-rxjava2:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/f6803b9e790afe77d3419a8b6fdcdaa7/transformed/room-rxjava2-2.5.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-rxjava2:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/f6803b9e790afe77d3419a8b6fdcdaa7/transformed/room-rxjava2-2.5.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-rxjava3:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/026da20766ab4dadc2225768939682b5/transformed/room-rxjava3-2.5.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-rxjava3:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/026da20766ab4dadc2225768939682b5/transformed/room-rxjava3-2.5.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-guava:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/18d96afbf15309f5273ef167763e5f6c/transformed/room-guava-2.5.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-guava:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/18d96afbf15309f5273ef167763e5f6c/transformed/room-guava-2.5.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.room:room-runtime:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dee0bf12b84abbd7381a59226948432b/transformed/room-runtime-2.5.0/AndroidManifest.xml:21:5-44
-MERGED from [androidx.room:room-runtime:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dee0bf12b84abbd7381a59226948432b/transformed/room-runtime-2.5.0/AndroidManifest.xml:21:5-44
-MERGED from [androidx.sqlite:sqlite-framework:2.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/1ee483b442d282728729010165eaec56/transformed/sqlite-framework-2.3.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite-framework:2.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/1ee483b442d282728729010165eaec56/transformed/sqlite-framework-2.3.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite:2.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/d44fe13c83261b5fa9c397c4f914e783/transformed/sqlite-2.3.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite:2.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/d44fe13c83261b5fa9c397c4f914e783/transformed/sqlite-2.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b5da5969a88e32ed3e3707dd5ece891/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b5da5969a88e32ed3e3707dd5ece891/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/590d0e1a78690db1cca4fdeaf11670cc/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/590d0e1a78690db1cca4fdeaf11670cc/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/64bf4391386c2b5ff0b01d1096da5b0a/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/64bf4391386c2b5ff0b01d1096da5b0a/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/bdf9db210125e7a59250623e203ada58/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/bdf9db210125e7a59250623e203ada58/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/228863afcbb817ea985f101a96bc5f44/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/228863afcbb817ea985f101a96bc5f44/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/aa20b87b88f8dd1836ed43601616dfb1/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/aa20b87b88f8dd1836ed43601616dfb1/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/1a4354d61b59807c0c9032b03bfb82b1/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/1a4354d61b59807c0c9032b03bfb82b1/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/c8a1f78857fe3061c3dd6a3d6e795149/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/c8a1f78857fe3061c3dd6a3d6e795149/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/639cb588ab3a5379d9c83fa9a0a65980/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/639cb588ab3a5379d9c83fa9a0a65980/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/f2ce2b6de87e68a81be18aa7567d2083/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
@@ -216,8 +224,6 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/mac-IBACAL31/.gradle
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/29f35b1eaf4a12c52ca9009fa587c761/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/d9bfbb567dc0fb9a294328bf90635ba7/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/d9bfbb567dc0fb9a294328bf90635ba7/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/c8a1f78857fe3061c3dd6a3d6e795149/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/c8a1f78857fe3061c3dd6a3d6e795149/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/e6dc925cabb5acfa3cfc75e9cd475c4d/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/e6dc925cabb5acfa3cfc75e9cd475c4d/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b7d55fe029a2eba4bb51a5ce4447b76/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
@@ -277,15 +283,15 @@ ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/mac-IBACAL31/.gra
 	android:name
 		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/10b81544a916cab592eb2651dab8e986/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
 service#androidx.room.MultiInstanceInvalidationService
-ADDED from [androidx.room:room-runtime:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dee0bf12b84abbd7381a59226948432b/transformed/room-runtime-2.5.0/AndroidManifest.xml:24:9-28:63
+ADDED from [androidx.room:room-runtime:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b5da5969a88e32ed3e3707dd5ece891/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
 	android:exported
-		ADDED from [androidx.room:room-runtime:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dee0bf12b84abbd7381a59226948432b/transformed/room-runtime-2.5.0/AndroidManifest.xml:27:13-37
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b5da5969a88e32ed3e3707dd5ece891/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
 	tools:ignore
-		ADDED from [androidx.room:room-runtime:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dee0bf12b84abbd7381a59226948432b/transformed/room-runtime-2.5.0/AndroidManifest.xml:28:13-60
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b5da5969a88e32ed3e3707dd5ece891/transformed/room-runtime-2.6.1/AndroidManifest.xml:28:13-60
 	android:directBootAware
-		ADDED from [androidx.room:room-runtime:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dee0bf12b84abbd7381a59226948432b/transformed/room-runtime-2.5.0/AndroidManifest.xml:26:13-43
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b5da5969a88e32ed3e3707dd5ece891/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
 	android:name
-		ADDED from [androidx.room:room-runtime:2.5.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/dee0bf12b84abbd7381a59226948432b/transformed/room-runtime-2.5.0/AndroidManifest.xml:25:13-74
+		ADDED from [androidx.room:room-runtime:2.6.1] /Users/mac-IBACAL31/.gradle/caches/transforms-3/2b5da5969a88e32ed3e3707dd5ece891/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
 meta-data#androidx.profileinstaller.ProfileInstallerInitializer
 ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/mac-IBACAL31/.gradle/caches/transforms-3/8025a341fde4862027ae497659bfbf3c/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
 	android:value

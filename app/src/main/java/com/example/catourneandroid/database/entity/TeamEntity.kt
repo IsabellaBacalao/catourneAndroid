@@ -8,6 +8,6 @@ import androidx.room.PrimaryKey
 @Entity
 data class TeamEntity(
     @PrimaryKey val idTeam: Int,
-    @ColumnInfo(name = "status_team") val statusTeam: String,
+    val statusTeam: String,
     @ColumnInfo(name = "position_team") val positionTeam: Int
 )

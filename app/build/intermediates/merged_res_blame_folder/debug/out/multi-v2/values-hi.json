@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.catourneandroid.app-mergeDebugResources-37:/values-hi/values-hi.xml",
+            "outputFile": "com.example.catourneandroid.app-mergeDebugResources-38:/values-hi/values-hi.xml",
             "map": [
                 {
                     "source": "/Users/mac-IBACAL31/.gradle/caches/transforms-3/a690b269fdae87765d7d9b2f00727dff/transformed/material-1.11.0/res/values-hi/values-hi.xml",

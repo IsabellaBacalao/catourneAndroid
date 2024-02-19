@@ -9,12 +9,6 @@ import androidx.room.ForeignKey
 @Entity(
     foreignKeys = [
         ForeignKey(
-            entity = ScoreEntity::class,
-            parentColumns = ["idScore"],
-            childColumns = ["idScore"],
-            onDelete = ForeignKey.CASCADE
-        ),
-        ForeignKey(
             entity = TeamEntity::class,
             parentColumns = ["idTeam"],
             childColumns = ["idTeam"],
@@ -23,8 +17,8 @@ import androidx.room.ForeignKey
     ]
 )
 data class UserEntity(
-    @PrimaryKey val idPseudo: Int,
-    @ColumnInfo(name = "my_pseudo") val pseudo: String,
-    @ColumnInfo(name = "id_score") val idScore: Int,
-    @ColumnInfo(name = "id_team") val idTeam: Int
+    @PrimaryKey(autoGenerate = true) val idPseudo: Int? = null,
+     val pseudo: String,
+     val score: Int = 0,
+    val idTeam: Int
 )

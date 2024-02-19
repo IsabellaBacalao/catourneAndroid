@@ -1,6 +1,9 @@
 package com.example.catourneandroid.database.dao;
 
 import android.database.Cursor;
+import android.os.CancellationSignal;
+import androidx.annotation.NonNull;
+import androidx.room.CoroutinesRoom;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
@@ -8,14 +11,12 @@ import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import com.example.catourneandroid.database.entity.TeamEntity;
-import io.reactivex.Completable;
 import java.lang.Class;
 import java.lang.Exception;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
-import java.lang.Void;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,75 +30,87 @@ public final class TeamDao_Impl implements TeamDao {
 
   private final EntityInsertionAdapter<TeamEntity> __insertionAdapterOfTeamEntity;
 
-  public TeamDao_Impl(RoomDatabase __db) {
+  public TeamDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfTeamEntity = new EntityInsertionAdapter<TeamEntity>(__db) {
       @Override
-      public String createQuery() {
-        return "INSERT OR ABORT INTO `TeamEntity` (`idTeam`,`statusTeam`,`positionTeam`) VALUES (?,?,?)";
+      @NonNull
+      protected String createQuery() {
+        return "INSERT OR ABORT INTO `TeamEntity` (`idTeam`,`statusTeam`,`position_team`) VALUES (?,?,?)";
       }
 
       @Override
-      public void bind(SupportSQLiteStatement stmt, TeamEntity value) {
-        stmt.bindLong(1, value.getIdTeam());
-        if (value.getStatusTeam() == null) {
-          stmt.bindNull(2);
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final TeamEntity entity) {
+        statement.bindLong(1, entity.getIdTeam());
+        if (entity.getStatusTeam() == null) {
+          statement.bindNull(2);
         } else {
-          stmt.bindString(2, value.getStatusTeam());
+          statement.bindString(2, entity.getStatusTeam());
         }
-        stmt.bindLong(3, value.getPositionTeam());
+        statement.bindLong(3, entity.getPositionTeam());
       }
     };
   }
 
   @Override
   public Object insertTeam(final TeamEntity team, final Continuation<? super Unit> $completion) {
-    return Completable.fromCallable(new Callable<Void>() {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
-      public Void call() throws Exception {
+      @NonNull
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __insertionAdapterOfTeamEntity.insert(team);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
       }
-    });
+    }, $completion);
   }
 
   @Override
-  public List<TeamEntity> getAllTeams() {
+  public Object getAllTeams(final Continuation<? super List<TeamEntity>> $completion) {
     final String _sql = "SELECT * FROM TeamEntity";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    __db.assertNotSuspendingTransaction();
-    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-    try {
-      final int _cursorIndexOfIdTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "idTeam");
-      final int _cursorIndexOfStatusTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "statusTeam");
-      final int _cursorIndexOfPositionTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "positionTeam");
-      final List<TeamEntity> _result = new ArrayList<TeamEntity>(_cursor.getCount());
-      while(_cursor.moveToNext()) {
-        final TeamEntity _item;
-        final int _tmpIdTeam;
-        _tmpIdTeam = _cursor.getInt(_cursorIndexOfIdTeam);
-        final String _tmpStatusTeam;
-        if (_cursor.isNull(_cursorIndexOfStatusTeam)) {
-          _tmpStatusTeam = null;
-        } else {
-          _tmpStatusTeam = _cursor.getString(_cursorIndexOfStatusTeam);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<TeamEntity>>() {
+      @Override
+      @NonNull
+      public List<TeamEntity> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfIdTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "idTeam");
+          final int _cursorIndexOfStatusTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "statusTeam");
+          final int _cursorIndexOfPositionTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "position_team");
+          final List<TeamEntity> _result = new ArrayList<TeamEntity>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final TeamEntity _item;
+            final int _tmpIdTeam;
+            _tmpIdTeam = _cursor.getInt(_cursorIndexOfIdTeam);
+            final String _tmpStatusTeam;
+            if (_cursor.isNull(_cursorIndexOfStatusTeam)) {
+              _tmpStatusTeam = null;
+            } else {
+              _tmpStatusTeam = _cursor.getString(_cursorIndexOfStatusTeam);
+            }
+            final int _tmpPositionTeam;
+            _tmpPositionTeam = _cursor.getInt(_cursorIndexOfPositionTeam);
+            _item = new TeamEntity(_tmpIdTeam,_tmpStatusTeam,_tmpPositionTeam);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
         }
-        final int _tmpPositionTeam;
-        _tmpPositionTeam = _cursor.getInt(_cursorIndexOfPositionTeam);
-        _item = new TeamEntity(_tmpIdTeam,_tmpStatusTeam,_tmpPositionTeam);
-        _result.add(_item);
       }
-      return _result;
-    } finally {
-      _cursor.close();
-      _statement.release();
-    }
+    }, $completion);
   }
 
-  @Override
-  public Object insertData(final UserDao userDao, final ScoreDao scoreDao, final TeamDao teamDao,
-      final Continuation<? super Unit> $completion) {
-    return TeamDao.DefaultImpls.insertData(TeamDao_Impl.this, userDao, scoreDao, teamDao, $completion);
-  }
-
+  @NonNull
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();
   }

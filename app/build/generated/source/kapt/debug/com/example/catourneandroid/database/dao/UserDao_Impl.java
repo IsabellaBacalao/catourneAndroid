@@ -1,6 +1,10 @@
 package com.example.catourneandroid.database.dao;
 
 import android.database.Cursor;
+import android.os.CancellationSignal;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.room.CoroutinesRoom;
 import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
@@ -9,19 +13,17 @@ import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import com.example.catourneandroid.database.entity.UserEntity;
-import io.reactivex.Completable;
 import java.lang.Class;
 import java.lang.Exception;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
-import java.lang.Void;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
-import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 
 @SuppressWarnings({"unchecked", "deprecation"})
@@ -32,46 +34,61 @@ public final class UserDao_Impl implements UserDao {
 
   private final EntityDeletionOrUpdateAdapter<UserEntity> __deletionAdapterOfUserEntity;
 
-  public UserDao_Impl(RoomDatabase __db) {
+  public UserDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfUserEntity = new EntityInsertionAdapter<UserEntity>(__db) {
       @Override
-      public String createQuery() {
-        return "INSERT OR ABORT INTO `UserEntity` (`idPseudo`,`pseudo`,`idScore`,`idTeam`) VALUES (?,?,?,?)";
+      @NonNull
+      protected String createQuery() {
+        return "INSERT OR ABORT INTO `UserEntity` (`idPseudo`,`pseudo`,`score`,`idTeam`) VALUES (?,?,?,?)";
       }
 
       @Override
-      public void bind(SupportSQLiteStatement stmt, UserEntity value) {
-        stmt.bindLong(1, value.getIdPseudo());
-        if (value.getPseudo() == null) {
-          stmt.bindNull(2);
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final UserEntity entity) {
+        if (entity.getIdPseudo() == null) {
+          statement.bindNull(1);
         } else {
-          stmt.bindString(2, value.getPseudo());
+          statement.bindLong(1, entity.getIdPseudo());
         }
-        stmt.bindLong(3, value.getIdScore());
-        stmt.bindLong(4, value.getIdTeam());
+        if (entity.getPseudo() == null) {
+          statement.bindNull(2);
+        } else {
+          statement.bindString(2, entity.getPseudo());
+        }
+        statement.bindLong(3, entity.getScore());
+        statement.bindLong(4, entity.getIdTeam());
       }
     };
     this.__deletionAdapterOfUserEntity = new EntityDeletionOrUpdateAdapter<UserEntity>(__db) {
       @Override
-      public String createQuery() {
+      @NonNull
+      protected String createQuery() {
         return "DELETE FROM `UserEntity` WHERE `idPseudo` = ?";
       }
 
       @Override
-      public void bind(SupportSQLiteStatement stmt, UserEntity value) {
-        stmt.bindLong(1, value.getIdPseudo());
+      protected void bind(@NonNull final SupportSQLiteStatement statement,
+          @NonNull final UserEntity entity) {
+        if (entity.getIdPseudo() == null) {
+          statement.bindNull(1);
+        } else {
+          statement.bindLong(1, entity.getIdPseudo());
+        }
       }
     };
   }
 
   @Override
-  public Object insertUser(final UserEntity user, final Continuation<? super Unit> $completion) {
-    return Completable.fromCallable(new Callable<Void>() {
-      @Override
-      public Void call() throws Exception {
-      }
-    });
+  public void insertUser(final UserEntity user) {
+    __db.assertNotSuspendingTransaction();
+    __db.beginTransaction();
+    try {
+      __insertionAdapterOfUserEntity.insert(user);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
   }
 
   @Override
@@ -95,24 +112,28 @@ public final class UserDao_Impl implements UserDao {
     try {
       final int _cursorIndexOfIdPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "idPseudo");
       final int _cursorIndexOfPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "pseudo");
-      final int _cursorIndexOfIdScore = CursorUtil.getColumnIndexOrThrow(_cursor, "idScore");
+      final int _cursorIndexOfScore = CursorUtil.getColumnIndexOrThrow(_cursor, "score");
       final int _cursorIndexOfIdTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "idTeam");
       final List<UserEntity> _result = new ArrayList<UserEntity>(_cursor.getCount());
-      while(_cursor.moveToNext()) {
+      while (_cursor.moveToNext()) {
         final UserEntity _item;
-        final int _tmpIdPseudo;
-        _tmpIdPseudo = _cursor.getInt(_cursorIndexOfIdPseudo);
+        final Integer _tmpIdPseudo;
+        if (_cursor.isNull(_cursorIndexOfIdPseudo)) {
+          _tmpIdPseudo = null;
+        } else {
+          _tmpIdPseudo = _cursor.getInt(_cursorIndexOfIdPseudo);
+        }
         final String _tmpPseudo;
         if (_cursor.isNull(_cursorIndexOfPseudo)) {
           _tmpPseudo = null;
         } else {
           _tmpPseudo = _cursor.getString(_cursorIndexOfPseudo);
         }
-        final int _tmpIdScore;
-        _tmpIdScore = _cursor.getInt(_cursorIndexOfIdScore);
+        final int _tmpScore;
+        _tmpScore = _cursor.getInt(_cursorIndexOfScore);
         final int _tmpIdTeam;
         _tmpIdTeam = _cursor.getInt(_cursorIndexOfIdTeam);
-        _item = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpIdScore,_tmpIdTeam);
+        _item = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpScore,_tmpIdTeam);
         _result.add(_item);
       }
       return _result;
@@ -123,11 +144,54 @@ public final class UserDao_Impl implements UserDao {
   }
 
   @Override
-  public Object insertData(final UserDao userDao, final ScoreDao scoreDao, final TeamDao teamDao,
-      final Continuation<? super Unit> $completion) {
-    return UserDao.DefaultImpls.insertData(UserDao_Impl.this, userDao, scoreDao, teamDao, $completion);
+  public Object getUserById(final int teamId, final Continuation<? super UserEntity> $completion) {
+    final String _sql = "SELECT * FROM UserEntity WHERE idTeam = ? LIMIT 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, teamId);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<UserEntity>() {
+      @Override
+      @Nullable
+      public UserEntity call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfIdPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "idPseudo");
+          final int _cursorIndexOfPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "pseudo");
+          final int _cursorIndexOfScore = CursorUtil.getColumnIndexOrThrow(_cursor, "score");
+          final int _cursorIndexOfIdTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "idTeam");
+          final UserEntity _result;
+          if (_cursor.moveToFirst()) {
+            final Integer _tmpIdPseudo;
+            if (_cursor.isNull(_cursorIndexOfIdPseudo)) {
+              _tmpIdPseudo = null;
+            } else {
+              _tmpIdPseudo = _cursor.getInt(_cursorIndexOfIdPseudo);
+            }
+            final String _tmpPseudo;
+            if (_cursor.isNull(_cursorIndexOfPseudo)) {
+              _tmpPseudo = null;
+            } else {
+              _tmpPseudo = _cursor.getString(_cursorIndexOfPseudo);
+            }
+            final int _tmpScore;
+            _tmpScore = _cursor.getInt(_cursorIndexOfScore);
+            final int _tmpIdTeam;
+            _tmpIdTeam = _cursor.getInt(_cursorIndexOfIdTeam);
+            _result = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpScore,_tmpIdTeam);
+          } else {
+            _result = null;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, $completion);
   }
 
+  @NonNull
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();
   }
