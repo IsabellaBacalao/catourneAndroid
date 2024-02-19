@@ -12,18 +12,5 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.fragmentChoixDesJoueursBtn.setOnClickListener{
-            replaceFragment(ChoixDesJoueurs())
-        }
-        binding.fragmentHomeBtn.setOnClickListener {
-            replaceFragment(Home())
-        }
-    }
-    private fun replaceFragment(fragment: Fragment){
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragmentContainer,fragment)
-        fragmentTransaction.commit()
     }
 }

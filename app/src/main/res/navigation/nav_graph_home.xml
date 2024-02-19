@@ -3,28 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_home"
-    app:startDestination="@id/mainActivity">
-
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.catourneandroid.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
+    app:startDestination="@id/homepage">
     <fragment
-        android:id="@+id/choixDesJoueurs"
-        android:name="com.example.catourneandroid.ChoixDesJoueurs"
-        android:label="fragment_choix_des_joueurs"
-        tools:layout="@layout/fragment_choix_des_joueurs" >
-        <action
-            android:id="@+id/action_choixDesJoueurs_to_mainActivity"
-            app:destination="@id/mainActivity" />
-    </fragment>
-    <fragment
-        android:id="@+id/home2"
+        android:id="@+id/homepage"
         android:name="com.example.catourneandroid.Home"
         android:label="Home" >
         <action
-            android:id="@+id/action_home2_to_mainActivity"
-            app:destination="@id/mainActivity" />
+            android:id="@+id/action_homepage_to_choixDesJoueurs"
+            app:destination="@id/choixDesJoueurs" />
     </fragment>
+    <fragment
+        android:id="@+id/choixDesJoueurs"
+        android:name="com.example.catourneandroid.ChoixDesJoueurs"
+        android:label="ChoixDesJoueurs" >
+        <action
+            android:id="@+id/action_choixDesJoueurs_to_gameOn"
+            app:destination="@id/gameOn" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOn"
+        android:name="com.example.catourneandroid.GameOn"
+        android:label="fragment_game_on"
+        tools:layout="@layout/fragment_game_on" />
 </navigation>
