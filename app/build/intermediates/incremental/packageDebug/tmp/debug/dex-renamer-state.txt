@@ -1,4 +1,4 @@
-#Mon Feb 19 17:42:03 CET 2024
+#Mon Feb 19 19:34:26 CET 2024
 base.0=/Users/mac-IBACAL31/Desktop/ISEN/Android/catourneAndroid/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/mac-IBACAL31/Desktop/ISEN/Android/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/Users/mac-IBACAL31/Desktop/ISEN/Android/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex

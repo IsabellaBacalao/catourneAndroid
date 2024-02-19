@@ -6,7 +6,6 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.CreationExtras
 import com.example.catourneandroid.database.MyDatabase
 import com.example.catourneandroid.database.entity.UserEntity
-import com.example.catourneandroid.repository.TeamRepository
 import com.example.catourneandroid.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

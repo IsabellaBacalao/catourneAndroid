@@ -22,24 +22,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // --------- TEAMS
-        val teamBlue1 = TeamEntity(idTeam = 1, statusTeam = "yellow", positionTeam = 1)
-        val teamBlue2 = TeamEntity(idTeam = 2, statusTeam = "yellow", positionTeam = 2)
+        val teamYellow1 = TeamEntity(idTeam = 1, statusTeam = "yellow", positionTeam = 1)
+        val teamYellow2 = TeamEntity(idTeam = 2, statusTeam = "yellow", positionTeam = 2)
 
         val teamRed1 = TeamEntity(idTeam = 3, statusTeam = "red", positionTeam = 1)
         val teamRed2 = TeamEntity(idTeam = 4, statusTeam = "red", positionTeam = 2)
 
-        fun insertIfNotExists(team: TeamEntity) {
-            teamViewModel.getTeamById(team.idTeam).observe(this) { existingTeam ->
-                if (existingTeam == null) {
-                    teamViewModel.insertTeam(team)
-                }
-            }
-        }
-
-        insertIfNotExists(teamBlue1)
-        insertIfNotExists(teamBlue2)
-        insertIfNotExists(teamRed1)
-        insertIfNotExists(teamRed2)
+        teamViewModel.insertTeam(teamYellow1)
+        teamViewModel.insertTeam(teamYellow2)
+        teamViewModel.insertTeam(teamRed1)
+        teamViewModel.insertTeam(teamRed2)
 
         val teamsTextView: TextView = findViewById(R.id.teamsTextView)
 
@@ -52,8 +44,6 @@ class MainActivity : AppCompatActivity() {
         })
 
         teamViewModel.getAllTeams()
-
-
 
         // Observe the LiveData in your ViewModel
         userViewModel.allUsers.observe(this, Observer { users ->

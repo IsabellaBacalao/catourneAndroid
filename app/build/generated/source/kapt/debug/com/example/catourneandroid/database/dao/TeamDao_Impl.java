@@ -3,6 +3,7 @@ package com.example.catourneandroid.database.dao;
 import android.database.Cursor;
 import android.os.CancellationSignal;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.room.CoroutinesRoom;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
@@ -100,6 +101,47 @@ public final class TeamDao_Impl implements TeamDao {
             _tmpPositionTeam = _cursor.getInt(_cursorIndexOfPositionTeam);
             _item = new TeamEntity(_tmpIdTeam,_tmpStatusTeam,_tmpPositionTeam);
             _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object getTeamById(final int teamId, final Continuation<? super TeamEntity> $completion) {
+    final String _sql = "SELECT * FROM TeamEntity WHERE idTeam = ? LIMIT 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, teamId);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<TeamEntity>() {
+      @Override
+      @Nullable
+      public TeamEntity call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfIdTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "idTeam");
+          final int _cursorIndexOfStatusTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "statusTeam");
+          final int _cursorIndexOfPositionTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "position_team");
+          final TeamEntity _result;
+          if (_cursor.moveToFirst()) {
+            final int _tmpIdTeam;
+            _tmpIdTeam = _cursor.getInt(_cursorIndexOfIdTeam);
+            final String _tmpStatusTeam;
+            if (_cursor.isNull(_cursorIndexOfStatusTeam)) {
+              _tmpStatusTeam = null;
+            } else {
+              _tmpStatusTeam = _cursor.getString(_cursorIndexOfStatusTeam);
+            }
+            final int _tmpPositionTeam;
+            _tmpPositionTeam = _cursor.getInt(_cursorIndexOfPositionTeam);
+            _result = new TeamEntity(_tmpIdTeam,_tmpStatusTeam,_tmpPositionTeam);
+          } else {
+            _result = null;
           }
           return _result;
         } finally {

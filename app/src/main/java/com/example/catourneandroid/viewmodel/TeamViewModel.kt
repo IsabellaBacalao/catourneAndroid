@@ -39,7 +39,11 @@ class TeamViewModel(private val repository: TeamRepository) : ViewModel() {
     // Function to insert a new team
     fun insertTeam(team: TeamEntity) {
         viewModelScope.launch(context = Dispatchers.IO) {
-            repository.insertTeam(team)
+            //Check if the team already exist
+            val existingTeam = repository.getTeamById(team.idTeam)
+            if (existingTeam == null) {
+                repository.insertTeam(team)
+            }
         }
     }
 
