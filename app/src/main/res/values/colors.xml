@@ -4,5 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_background_frag_choix_des_joueurs">#f59e42</color>
     <color name="color_background_frag_home">#7542f5</color>
-
+    <color name="color_background_players_zone">#7AFDF9F9</color>
 </resources>
