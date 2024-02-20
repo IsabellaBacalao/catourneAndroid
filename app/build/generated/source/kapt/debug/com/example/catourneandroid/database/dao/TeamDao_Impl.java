@@ -8,6 +8,7 @@ import androidx.room.CoroutinesRoom;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
@@ -31,6 +32,8 @@ public final class TeamDao_Impl implements TeamDao {
 
   private final EntityInsertionAdapter<TeamEntity> __insertionAdapterOfTeamEntity;
 
+  private final SharedSQLiteStatement __preparedStmtOfUpdateTeamById;
+
   public TeamDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfTeamEntity = new EntityInsertionAdapter<TeamEntity>(__db) {
@@ -52,10 +55,18 @@ public final class TeamDao_Impl implements TeamDao {
         statement.bindLong(3, entity.getPositionTeam());
       }
     };
+    this.__preparedStmtOfUpdateTeamById = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "UPDATE TeamEntity SET position_team = ? WHERE idTeam = ?";
+        return _query;
+      }
+    };
   }
 
   @Override
-  public Object insertTeam(final TeamEntity team, final Continuation<? super Unit> $completion) {
+  public Object insertTeam(final TeamEntity team, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -69,11 +80,39 @@ public final class TeamDao_Impl implements TeamDao {
           __db.endTransaction();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @Override
-  public Object getAllTeams(final Continuation<? super List<TeamEntity>> $completion) {
+  public Object updateTeamById(final int teamId, final int newPosition,
+      final Continuation<? super Unit> arg2) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateTeamById.acquire();
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, newPosition);
+        _argIndex = 2;
+        _stmt.bindLong(_argIndex, teamId);
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfUpdateTeamById.release(_stmt);
+        }
+      }
+    }, arg2);
+  }
+
+  @Override
+  public Object getAllTeams(final Continuation<? super List<TeamEntity>> arg0) {
     final String _sql = "SELECT * FROM TeamEntity";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
@@ -108,11 +147,11 @@ public final class TeamDao_Impl implements TeamDao {
           _statement.release();
         }
       }
-    }, $completion);
+    }, arg0);
   }
 
   @Override
-  public Object getTeamById(final int teamId, final Continuation<? super TeamEntity> $completion) {
+  public Object getTeamById(final int teamId, final Continuation<? super TeamEntity> arg1) {
     final String _sql = "SELECT * FROM TeamEntity WHERE idTeam = ? LIMIT 1";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
@@ -149,7 +188,7 @@ public final class TeamDao_Impl implements TeamDao {
           _statement.release();
         }
       }
-    }, $completion);
+    }, arg1);
   }
 
   @NonNull
