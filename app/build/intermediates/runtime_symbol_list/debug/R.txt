@@ -3203,6 +3203,7 @@ int id action_text 0x7f080046
 int id actions 0x7f080047
 int id activity_chooser_view_content 0x7f080048
 int id add 0x7f080049
+int id afficheplayers 0x7f080205
 int id alertTitle 0x7f08004a
 int id aligned 0x7f08004b
 int id all 0x7f08004c

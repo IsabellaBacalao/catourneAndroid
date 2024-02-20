@@ -21,6 +21,7 @@ drawable rounded_bg
 id ScrollViewPlayers
 id action_choixDesJoueurs_to_gameOn
 id action_homepage_to_choixDesJoueurs
+id afficheplayers
 id btnFragmentChoixDesJoueurs
 id btnStartAGame
 id button_add_player
