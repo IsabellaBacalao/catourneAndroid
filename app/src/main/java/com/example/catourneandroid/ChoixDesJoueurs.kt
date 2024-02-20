@@ -1,6 +1,7 @@
 package com.example.catourneandroid
 
-import android.annotation.SuppressLint
+import TeamViewModel
+import UserViewModel
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,10 +12,17 @@ import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import com.example.catourneandroid.database.entity.TeamEntity
+import com.example.catourneandroid.database.entity.UserEntity
 
 
 class ChoixDesJoueurs : Fragment() {
+
+    private val teamViewModel: TeamViewModel by viewModels(factoryProducer = { TeamViewModel.provideFactory() })
+    private val userViewModel: UserViewModel by viewModels(factoryProducer = { UserViewModel.provideFactory() })
+    private var count = 1;
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -29,6 +37,19 @@ class ChoixDesJoueurs : Fragment() {
             ViewGroup.LayoutParams.WRAP_CONTENT)
         params.setMargins(5, 1, 10, 3)
 
+        //CREATION DES TEAMS YELLOW ET RED
+        val teamYellow1 = TeamEntity(idTeam = 1, statusTeam = "yellow", positionTeam = 1)
+        val teamYellow2 = TeamEntity(idTeam = 2, statusTeam = "yellow", positionTeam = 2)
+
+        val teamRed1 = TeamEntity(idTeam = 3, statusTeam = "red", positionTeam = 1)
+        val teamRed2 = TeamEntity(idTeam = 4, statusTeam = "red", positionTeam = 2)
+
+        //val teamWaiting = TeamEntity(idTeam = 5, statusTeam = "waiting", positionTeam = 3)
+
+        teamViewModel.insertTeam(teamYellow1)
+        teamViewModel.insertTeam(teamYellow2)
+        teamViewModel.insertTeam(teamRed1)
+        teamViewModel.insertTeam(teamRed2)
 
         //Add a new Player at the game
         btnNewPlayer.setOnClickListener {
@@ -48,13 +69,25 @@ class ChoixDesJoueurs : Fragment() {
             viewPlayer.setHorizontallyScrolling(true)
             layoutPlayers.addView(viewPlayer)
             inputPlayers.setText("");
+
+            //AJOUT DANS UNE TEAM
+            if(count > 4) {
+                val user = UserEntity(pseudo = namePlayer, idTeam = 4)
+                userViewModel.insertUser(user)
+            }else {
+                val user = UserEntity(pseudo = namePlayer, idTeam = count)
+                userViewModel.insertUser(user)
+                count += 1
+            }
         }
 
+        //START A GAME
         val btnStartAGame= view.findViewById<Button>(R.id.btnStartAGame)
 
         btnStartAGame.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_choixDesJoueurs_to_gameOn)
         }
+
 
         return view
     }
