@@ -1,126 +1,130 @@
 [
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/ic_launcher_foreground.xml"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_rounded_bg.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/rounded_bg.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/xml_data_extraction_rules.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/xml/data_extraction_rules.xml"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_rounded_bg.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/rounded_bg.xml"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_home_button.png.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/home_button.png"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_background_home.jpg.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/background_home.jpg"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_button_play.png.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/button_play.png"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/layout_fragment_choix_des_joueurs.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/layout/fragment_choix_des_joueurs.xml"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/layout_fragment_game_on.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/layout/fragment_game_on.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/ic_launcher_background.xml"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_button_play.png.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/button_play.png"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/layout_fragment_game_on.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/layout/fragment_game_on.xml"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_plus_button.png.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/plus_button.png"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/xml_backup_rules.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/xml/backup_rules.xml"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_background_home.jpg.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/background_home.jpg"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_but_rouge.png.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/but_rouge.png"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/layout_fragment_home.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/layout/fragment_home.xml"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_but_jaune.png.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/but_jaune.png"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_background.jpg.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/background.jpg"
     },
     {
         "merged": "com.example.catourneandroid.app-merged_res-49:/layout_activity_main.xml.flat",
         "source": "com.example.catourneandroid.app-main-51:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/xml_backup_rules.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_background.jpg.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/background.jpg"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/layout_activity_main.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_but_jaune.png.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/but_jaune.png"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/navigation_nav_graph_home.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/navigation/nav_graph_home.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_background_on_game.jpg.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/background_on_game.jpg"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_background_on_game.jpg.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/background_on_game.jpg"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_plus_button.png.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/plus_button.png"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_background_players.jpg.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/background_players.jpg"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_but_rouge.png.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/but_rouge.png"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/drawable_home_button.png.flat",
-        "source": "com.example.catourneandroid.app-main-51:/drawable/home_button.png"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/navigation_nav_graph_home.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/navigation/nav_graph_home.xml"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/layout_fragment_choix_des_joueurs.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/layout/fragment_choix_des_joueurs.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/layout_fragment_home.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/layout/fragment_home.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.example.catourneandroid.app-main-51:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_background_players.jpg.flat",
+        "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/background_players.jpg"
     }
 ]

@@ -3333,7 +3333,6 @@ int id fixed 0x7f0800c8
 int id flip 0x7f0800c9
 int id floating 0x7f0800ca
 int id forever 0x7f0800cb
-int id fragmentContainer 0x7f0800cc
 int id fragment_container_view_tag 0x7f0800cd
 int id frost 0x7f0800ce
 int id fullscreen_header 0x7f0800cf
@@ -3628,6 +3627,7 @@ int id uniform 0x7f0801ef
 int id unlabeled 0x7f0801f0
 int id up 0x7f0801f1
 int id useLogo 0x7f0801f2
+int id userTextView 0x7f080205
 int id vertical_only 0x7f0801f3
 int id view_offset_helper 0x7f0801f4
 int id view_transition 0x7f0801f5
