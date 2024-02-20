@@ -3,23 +3,24 @@ package com.example.catourneandroid
 import TeamViewModel
 import UserViewModel
 import android.os.Bundle
-import android.widget.TextView
+import com.example.catourneandroid.databinding.ActivityMainBinding
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import com.example.catourneandroid.database.MyDatabase
 import com.example.catourneandroid.database.entity.TeamEntity
 import com.example.catourneandroid.database.entity.UserEntity
-import com.example.catourneandroid.repository.UserRepository
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityMainBinding
 
     private val teamViewModel: TeamViewModel by viewModels(factoryProducer = { TeamViewModel.provideFactory() })
     private val userViewModel: UserViewModel by viewModels(factoryProducer = { UserViewModel.provideFactory() })
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // --------- TEAMS
         val teamYellow1 = TeamEntity(idTeam = 1, statusTeam = "yellow", positionTeam = 1)
@@ -33,14 +34,14 @@ class MainActivity : AppCompatActivity() {
         teamViewModel.insertTeam(teamRed1)
         teamViewModel.insertTeam(teamRed2)
 
-        val teamsTextView: TextView = findViewById(R.id.teamsTextView)
+        //val teamsTextView: TextView = findViewById(R.id.teamsTextView)
 
         // --------- USERS
 
         // Observe changes in the list of teams
         teamViewModel.allTeams.observe(this, Observer { teams ->
             val teamNames = teams.joinToString("\n") { it.statusTeam }
-            teamsTextView.text = teamNames
+            //teamsTextView.text = teamNames
         })
 
         teamViewModel.getAllTeams()
@@ -54,5 +55,4 @@ class MainActivity : AppCompatActivity() {
         val user = UserEntity( pseudo = "User1", idTeam = 1)
         userViewModel.insertUser(user)
     }
-
 }

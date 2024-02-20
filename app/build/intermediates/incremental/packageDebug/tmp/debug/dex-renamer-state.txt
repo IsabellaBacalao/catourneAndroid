@@ -1,18 +1,20 @@
-#Mon Feb 19 19:34:26 CET 2024
-base.0=/Users/mac-IBACAL31/Desktop/ISEN/Android/catourneAndroid/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/Users/mac-IBACAL31/Desktop/ISEN/Android/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.2=/Users/mac-IBACAL31/Desktop/ISEN/Android/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
-base.3=/Users/mac-IBACAL31/Desktop/ISEN/Android/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
-base.4=/Users/mac-IBACAL31/Desktop/ISEN/Android/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
-base.5=/Users/mac-IBACAL31/Desktop/ISEN/Android/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
-base.6=/Users/mac-IBACAL31/Desktop/ISEN/Android/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex
+#Tue Feb 20 09:42:04 CET 2024
+base.0=/Users/michl/AndroidStudioProjects/catourneAndroid/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/michl/AndroidStudioProjects/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.2=/Users/michl/AndroidStudioProjects/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
+base.3=/Users/michl/AndroidStudioProjects/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
+base.4=/Users/michl/AndroidStudioProjects/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
+base.5=/Users/michl/AndroidStudioProjects/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex
+base.6=/Users/michl/AndroidStudioProjects/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
+base.7=/Users/michl/AndroidStudioProjects/catourneAndroid/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=1/classes.dex
 path.3=12/classes.dex
 path.4=14/classes.dex
-path.5=4/classes.dex
-path.6=6/classes.dex
+path.5=15/classes.dex
+path.6=4/classes.dex
+path.7=6/classes.dex
 renamed.0=classes.dex
 renamed.1=classes2.dex
 renamed.2=classes3.dex
@@ -20,3 +22,4 @@ renamed.3=classes4.dex
 renamed.4=classes5.dex
 renamed.5=classes6.dex
 renamed.6=classes7.dex
+renamed.7=classes8.dex

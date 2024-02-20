@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="color_background_frag_choix_des_joueurs">#f59e42</color>
+    <color name="color_background_frag_home">#7542f5</color>
+    <color name="color_background_players_zone">#7AFDF9F9</color>
+    <color name="color_button_begin">#A16895D7</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">catourneAndroid</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_button">home button</string>
+    <string name="input">Input</string>
+    <string name="play_button">play button</string>
+    <string name="plus_button">plus_button</string>
+    <string name="start">START</string>
     <style name="Base.Theme.CatourneAndroid" parent="Theme.Material3.DayNight.NoActionBar">
         
         
+    </style>
+    <style name="PlayersListStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">30sp</item>
     </style>
     <style name="Theme.CatourneAndroid" parent="Base.Theme.CatourneAndroid"/>
 </resources>

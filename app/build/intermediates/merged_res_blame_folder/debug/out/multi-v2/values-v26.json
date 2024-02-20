@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.catourneandroid.app-mergeDebugResources-38:/values-v26/values-v26.xml",
+            "outputFile": "com.example.catourneandroid.app-mergeDebugResources-47:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/Users/mac-IBACAL31/.gradle/caches/transforms-3/dbe3962d9aec76139097d4ab0707e85b/transformed/appcompat-1.6.1/res/values-v26/values-v26.xml",
+                    "source": "/Users/michl/.gradle/caches/transforms-3/dbe3962d9aec76139097d4ab0707e85b/transformed/appcompat-1.6.1/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
