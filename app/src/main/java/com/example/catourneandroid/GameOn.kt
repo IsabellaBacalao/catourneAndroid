@@ -18,23 +18,31 @@ class GameOn : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_game_on, container, false)
-
-        /*// Observe changes in the list of teams
-        teamViewModel.allTeams.observe(viewLifecycleOwner, Observer { teams ->
-            val teamNames = teams.joinToString("\n") { it.statusTeam }
-
-            //teamsTextView.text = teamNames
-        })*/
-
-
         val viewPlayer = view.findViewById<TextView>(R.id.afficheplayers)
 
+        // Observe changes in the list of teams
+        teamViewModel.allTeams.observe(viewLifecycleOwner, Observer { teams ->
+            if (teams != null) {
+                val teamNames = teams.joinToString(",") { it.statusTeam }
+                viewPlayer.text = teamNames
+            } else {
+                viewPlayer.text = "No teams available"
+            }
+        })
         teamViewModel.getAllTeams()
+        userViewModel.allUsers.observe(viewLifecycleOwner, Observer { users ->
+            if (users != null) {
+                val usersNames = users.joinToString(",") { it.pseudo }
+                viewPlayer.text = usersNames
+            } else {
+                viewPlayer.text = "No teams available"
+            }
+        })
 
         // Observe the LiveData in your ViewModel
         userViewModel.allUsers.observe(viewLifecycleOwner, Observer { users ->
-            val userNames = users.joinToString("\n") { it.pseudo }
-            viewPlayer.text = userNames
+            val usersNames = users.joinToString("\n") { it.pseudo }
+            viewPlayer.text = usersNames
         })
 
 

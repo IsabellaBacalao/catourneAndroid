@@ -39,10 +39,10 @@ public final class MyDatabase_Impl extends MyDatabase {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(4) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS `UserEntity` (`idPseudo` INTEGER PRIMARY KEY AUTOINCREMENT, `pseudo` TEXT NOT NULL, `score` INTEGER NOT NULL, `idTeam` INTEGER NOT NULL, FOREIGN KEY(`idTeam`) REFERENCES `TeamEntity`(`idTeam`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `UserEntity` (`idPseudo` INTEGER PRIMARY KEY AUTOINCREMENT, `pseudo` TEXT NOT NULL, `score` INTEGER NOT NULL, `userPosition` INTEGER NOT NULL, `idTeam` INTEGER NOT NULL, FOREIGN KEY(`idTeam`) REFERENCES `TeamEntity`(`idTeam`) ON UPDATE NO ACTION ON DELETE CASCADE )");
         db.execSQL("CREATE TABLE IF NOT EXISTS `TeamEntity` (`idTeam` INTEGER NOT NULL, `statusTeam` TEXT NOT NULL, `position_team` INTEGER NOT NULL, PRIMARY KEY(`idTeam`))");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4df5ef730f1c1d249d9ae7fd08284a80')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8481bec97e1cf16b99f32aad75c5dcad')");
       }
 
       @Override
@@ -93,10 +93,11 @@ public final class MyDatabase_Impl extends MyDatabase {
       @NonNull
       public RoomOpenHelper.ValidationResult onValidateSchema(
           @NonNull final SupportSQLiteDatabase db) {
-        final HashMap<String, TableInfo.Column> _columnsUserEntity = new HashMap<String, TableInfo.Column>(4);
+        final HashMap<String, TableInfo.Column> _columnsUserEntity = new HashMap<String, TableInfo.Column>(5);
         _columnsUserEntity.put("idPseudo", new TableInfo.Column("idPseudo", "INTEGER", false, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsUserEntity.put("pseudo", new TableInfo.Column("pseudo", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsUserEntity.put("score", new TableInfo.Column("score", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUserEntity.put("userPosition", new TableInfo.Column("userPosition", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsUserEntity.put("idTeam", new TableInfo.Column("idTeam", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysUserEntity = new HashSet<TableInfo.ForeignKey>(1);
         _foreignKeysUserEntity.add(new TableInfo.ForeignKey("TeamEntity", "CASCADE", "NO ACTION", Arrays.asList("idTeam"), Arrays.asList("idTeam")));
@@ -123,7 +124,7 @@ public final class MyDatabase_Impl extends MyDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "4df5ef730f1c1d249d9ae7fd08284a80", "bbeead9524581275bb3910eab3d7ecfa");
+    }, "8481bec97e1cf16b99f32aad75c5dcad", "9b6eb6e1f17f80afe86813b05369aa35");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

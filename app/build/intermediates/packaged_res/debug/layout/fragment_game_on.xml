@@ -22,4 +22,13 @@
         android:layout_marginBottom="381dp"
         android:background="@drawable/but_rouge" />
 
+    <TextView
+        android:id="@+id/afficheplayers"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:text=""
+        />
+
 </RelativeLayout>

@@ -8,15 +8,15 @@
         "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/layout/fragment_home.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-mergeDebugResources-48:/layout/activity_main.xml",
-        "source": "com.example.catourneandroid.app-main-51:/layout/activity_main.xml"
-    },
-    {
         "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-mergeDebugResources-48:/layout/fragment_game_on.xml",
         "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/layout/fragment_game_on.xml"
     },
     {
         "merged": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-mergeDebugResources-48:/layout/activity_main.xml",
         "source": "/Users/mac-IBACAL31/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.catourneandroid.app-mergeDebugResources-48:/layout/fragment_game_on.xml",
+        "source": "com.example.catourneandroid.app-main-51:/layout/fragment_game_on.xml"
     }
 ]
