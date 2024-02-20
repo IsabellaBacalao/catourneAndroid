@@ -15,4 +15,7 @@ interface TeamDao {
 
     @Query("SELECT * FROM TeamEntity WHERE idTeam = :teamId LIMIT 1")
     suspend fun getTeamById(teamId: Int): TeamEntity?
+
+    @Query("UPDATE TeamEntity SET position_team = :newPosition WHERE idTeam = :teamId")
+    suspend fun updateTeamById(teamId: Int, newPosition: Int)
 }

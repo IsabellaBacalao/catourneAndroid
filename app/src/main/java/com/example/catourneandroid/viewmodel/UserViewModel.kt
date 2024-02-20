@@ -14,12 +14,35 @@ import kotlinx.coroutines.launch
 class UserViewModel(private val repository: UserRepository) : ViewModel() {
 
     private var _allUsers = MutableLiveData<List<UserEntity>>()
+    private var _user = MutableLiveData<UserEntity?>()
+
     val allUsers: LiveData<List<UserEntity>> = _allUsers
+    val user: MutableLiveData<UserEntity?> = _user
 
     fun getAllUsers() {
-        viewModelScope.launch{
+        viewModelScope.launch {
             val results = repository.getAllUsers()
             _allUsers.value = results
+        }
+    }
+
+    fun getUserById(userId: Int) {
+        viewModelScope.launch {
+            val user = repository.getUserById(userId)
+            _user.value = user
+        }
+    }
+
+    fun getUserByIdTeam(teamId: Int) {
+        viewModelScope.launch {
+            val user = repository.getUserByIdTeam(teamId)
+            _user.value = user
+        }
+    }
+
+    fun deleteUsers() {
+        viewModelScope.launch {
+            repository.deleteAllUsers()
         }
     }
 

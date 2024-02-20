@@ -26,12 +26,12 @@ id btnFragmentChoixDesJoueurs
 id btnStartAGame
 id button_add_player
 id choixDesJoueurs
-id fragmentContainer
 id gameOn
 id homepage
 id input_text_players
 id layout_players_zone
 id nav_graph_home
+id userTextView
 layout activity_main
 layout fragment_choix_des_joueurs
 layout fragment_game_on
