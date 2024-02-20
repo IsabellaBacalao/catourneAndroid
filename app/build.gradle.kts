@@ -43,8 +43,10 @@ android {
 
 dependencies {
 
+    val fragment_version = "1.2.5"
+
+    val room_version = "2.6.1"
     implementation("androidx.navigation:navigation-runtime-ktx:2.7.7")
-    val room_version = "2.5.0"
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -58,7 +60,6 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
 
     implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
 
     // To use Kotlin annotation processing tool (kapt)
     kapt("androidx.room:room-compiler:$room_version")
@@ -66,19 +67,12 @@ dependencies {
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$room_version")
 
-    // optional - RxJava2 support for Room
-    implementation("androidx.room:room-rxjava2:$room_version")
+    implementation ("androidx.fragment:fragment-ktx:$fragment_version")
 
-    // optional - RxJava3 support for Room
-    implementation("androidx.room:room-rxjava3:$room_version")
+    //implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    //implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
 
-    // optional - Guava support for Room, including Optional and ListenableFuture
-    implementation("androidx.room:room-guava:$room_version")
+    implementation ("androidx.activity:activity-ktx:1.3.1")
 
-    // optional - Test helpers
-    testImplementation("androidx.room:room-testing:$room_version")
-
-    // optional - Paging 3 Integration
-    implementation("androidx.room:room-paging:$room_version")
 
 }
