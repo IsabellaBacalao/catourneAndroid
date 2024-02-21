@@ -19,133 +19,152 @@ import com.example.catourneandroid.database.entity.UserEntity
 class GameOn : Fragment() {
 
     private val userViewModel: UserViewModel by viewModels(factoryProducer = { UserViewModel.provideFactory() })
-    /*
-    YELLOW ATTAQUE      1
-    YELLOW DEF          2
-
-    RED ATTAQUE         3
-    RED DEF             4
-     */
-
+    private var firstAppear = 0;
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
         val view = inflater.inflate(R.layout.fragment_game_on, container, false)
 
-        //GET ALL OF THE PLAYERS
         userViewModel.allUsers.observe(viewLifecycleOwner, Observer { users ->
-            displayPseudosByTeam(users, view)
+            if(firstAppear == 0){
+                displayPseudosByTeamAndWaitingList(view, users)
+                firstAppear = 1
+            }
+            val btnPointForYellow = view.findViewById<ImageButton>(R.id.btnButYellow)
+            btnPointForYellow.setOnClickListener{
+                changeOfPlayersRedTeam(users)
+                displayPseudosByTeamAndWaitingList(view, users)
+            }
+
+            val btnPointForRed = view.findViewById<ImageButton>(R.id.btnButRed)
+            btnPointForRed.setOnClickListener{
+                changeOfPlayersYellowTeam(users)
+                displayPseudosByTeamAndWaitingList(view, users)
+            }
         })
         userViewModel.getAllUsers()
 
-        //GET ALL PLAYERS WAITING LIST
-        userViewModel.allUsers.observe(viewLifecycleOwner, Observer { usersWaiting ->
-            displayPseudosWaitingList(usersWaiting, view)
-        })
-        userViewModel.getUserByIdTeam(5)
-
-        val btnPointForYellow = view.findViewById<ImageButton>(R.id.btnButYellow)
-        btnPointForYellow.setOnClickListener{
-            changeOfPlayersRedTeam()
-        }
-        val btnPointForRed = view.findViewById<ImageButton>(R.id.btnButRed)
-        btnPointForRed.setOnClickListener{
-            changeOfPlayersYellowTeam()
-        }
-
         return view
     }
-    private fun changeOfPlayersYellowTeam(){
-        //CHANGE OF ATTAQUE
-        userViewModel.allUsers.observe(viewLifecycleOwner, Observer { usersPlaying ->
-            val redTeam = usersPlaying.filter { it.idTeam == 3 || it.idTeam == 4 }
-            val yellowTeam = usersPlaying.filter { it.idTeam == 1 || it.idTeam == 2 }
-            //CHANGE POSITION OF THE PLAYERS
-            for (user in yellowTeam){
-                if (user.idTeam == 1){
-                    //UPDATE ID TEAM == > 2
+    private fun changeOfPlayersYellowTeam(users: List<UserEntity>){
 
-                }else{
-                    // UPDATE ID TEAM == > 5
+        val waiting = users.filter { it.idTeam == 5 }
+        val maxIdTeam = waiting.maxByOrNull { it.userPosition }?.userPosition
 
-                    val userGoToWaitingList = user
-                }
+        val redTeam = users.filter { it.idTeam == 3 || it.idTeam == 4 }
+        val yellowTeam = users.filter { it.idTeam == 1 || it.idTeam == 2 }
+
+        //UPDATE SCORE REDTEAM
+        for (user in redTeam){
+            user.score += 1;
+            userViewModel.updateScore(user);
+        }
+
+        //CHANGE POSITION OF THE PLAYERS
+        val yellowTeamDes = yellowTeam.sortedByDescending { it.idTeam }
+        for (user in yellowTeamDes){
+            if(user.idTeam == 2){
+                //UPDATE ID TEAM == > 5
+                user.idTeam = 5;
+                userViewModel.updateIdTeamByUserId(user);
+                if (maxIdTeam != null) {
+                    user.userPosition = maxIdTeam
+                };
+                userViewModel.updatePositionUser(user);
             }
-            //ADD SCORE TO THE PLAYERS OF RED TEAM
-            for (user in redTeam){
-                //UPDATE SCORE == > +1
+            if (user.idTeam == 1){
+                //UPDATE ID TEAM == > 2
+                user.idTeam = 2;
+                userViewModel.updateIdTeamByUserId(user);
             }
-        })
-        userViewModel.getUsersByPosition(0)
-
-        // CHANGE OF THE WAITING LIST
-        userViewModel.allUsers.observe(viewLifecycleOwner, Observer { usersWaiting ->
-            val maxIdTeam: Int? = usersWaiting.maxByOrNull { it.idTeam }?.idTeam
-            //RECHERCHE DU DERNIER WAITING LIST
-            //UPDATE POSITION ID de userGoToWaitingList ==> maxIdTeam
-            val sortedWaitingList = usersWaiting.sortedBy { it.userPosition }
-            for (user in sortedWaitingList){
+        }
+        for (user in waiting){
+            if(user.idTeam == 5){
                 if(user.userPosition == 1){
                     // PREMIER DE LA WAITING LIST ENTRE EN JEU
                     // ID TEAM == > 1
+                    user.idTeam = 1;
+                    userViewModel.updateIdTeamByUserId(user);
                     // POSITION ID == > 0
+                    user.userPosition = 0;
+                    userViewModel.updatePositionUser(user);
                 }else{
                     // CHANGEMENT POSITION ID
                     // user.userPosition == > position-1
+                    user.userPosition -= 1;
+                    userViewModel.updatePositionUser(user);
                 }
             }
-        })
-        userViewModel.getUserByIdTeam(5)
 
+        }
     }
-    private fun changeOfPlayersRedTeam(){
-        userViewModel.allUsers.observe(viewLifecycleOwner, Observer { usersPlaying ->
-            val redTeam = usersPlaying.filter { it.idTeam == 3 || it.idTeam == 4 }
-            val yellowTeam = usersPlaying.filter { it.idTeam == 1 || it.idTeam == 2 }
-            //CHANGE POSITION OF THE PLAYERS
-            for (user in redTeam){
-                if (user.idTeam == 3){
-                    //UPDATE ID TEAM == > 4
+    private fun changeOfPlayersRedTeam(users: List<UserEntity>){
 
-                }else{
-                    // UPDATE ID TEAM == > 5
-                    val userGoToWaitingList = user
-                }
-            }
-            //ADD SCORE TO THE PLAYERS OF RED TEAM
-            for (user in yellowTeam){
-                //UPDATE SCORE == > +1
-            }
-        })
-        userViewModel.getUsersByPosition(0)
+        val waiting = users.filter { it.idTeam == 5 }
+        val maxIdTeam = waiting.maxByOrNull { it.userPosition }?.userPosition
 
-        // CHANGE OF THE WAITING LIST
-        userViewModel.allUsers.observe(viewLifecycleOwner, Observer { usersWaiting ->
-            val maxIdTeam: Int? = usersWaiting.maxByOrNull { it.idTeam }?.idTeam
-            //RECHERCHE DU DERNIER WAITING LIST
-            //UPDATE POSITION ID de userGoToWaitingList ==> maxIdTeam
-            val sortedWaitingList = usersWaiting.sortedBy { it.userPosition }
-            for (user in sortedWaitingList){
+        val redTeam = users.filter { it.idTeam == 3 || it.idTeam == 4 }
+        val yellowTeam = users.filter { it.idTeam == 1 || it.idTeam == 2 }
+
+        for (user in yellowTeam){
+            user.score += 1;
+            userViewModel.updateScore(user);
+        }
+
+        //CHANGE POSITION OF THE PLAYERS
+        val redTeamDes = redTeam.sortedByDescending { it.idTeam }
+        for (user in redTeamDes){
+            if(user.idTeam == 4){
+                //UPDATE ID TEAM == > 4
+                user.idTeam = 5;
+                userViewModel.updateIdTeamByUserId(user);
+                if (maxIdTeam != null) {
+                    user.userPosition = maxIdTeam
+                };
+                userViewModel.updatePositionUser(user);
+            }
+            if (user.idTeam == 3){
+                //UPDATE ID TEAM == > 4
+                user.idTeam = 4;
+                userViewModel.updateIdTeamByUserId(user);
+            }
+        }
+        //ADD SCORE TO THE PLAYERS OF RED TEAM
+
+        for (user in waiting){
+            if(user.idTeam == 5){
                 if(user.userPosition == 1){
                     // PREMIER DE LA WAITING LIST ENTRE EN JEU
                     // ID TEAM == > 3
+                    user.idTeam = 3;
+                    userViewModel.updateIdTeamByUserId(user);
                     // POSITION ID == > 0
+                    user.userPosition = 0;
+                    userViewModel.updatePositionUser(user);
                 }else{
                     // CHANGEMENT POSITION ID
                     // user.userPosition == > position-1
+                    user.userPosition -= 1;
+                    userViewModel.updatePositionUser(user);
                 }
             }
-        })
-        userViewModel.getUserByIdTeam(5)
-    }
 
+        }
+    }
     @SuppressLint("ResourceAsColor")
-    private fun displayPseudosByTeam(users: List<UserEntity>, view: View, ){
+    private fun displayPseudosByTeamAndWaitingList(view: View, users: List<UserEntity>){
+
+        val layoutWaitingPlayers = view.findViewById<LinearLayout>(R.id.layout_waiting_players_zone)
+        layoutWaitingPlayers.removeAllViews()
 
         val y_attaque = view.findViewById<TextView>(R.id.yellow_team_atq)
         val y_def = view.findViewById<TextView>(R.id.yellow_team_def)
         val r_attaque = view.findViewById<TextView>(R.id.red_team_atq)
         val r_def = view.findViewById<TextView>(R.id.red_team_def)
 
-        for (user in users) {
+        //AFFICHE DANS LORDRE
+        val sortedUsers = users.sortedBy { it.userPosition }
+
+        for (user in sortedUsers) {
             val teamId = user.idTeam
             val pseudo = user.pseudo
             when (teamId) {
@@ -153,37 +172,28 @@ class GameOn : Fragment() {
                 2 -> {y_def.text = pseudo}
                 3 -> {r_attaque.text = pseudo}
                 4 -> {r_def.text = pseudo}
+                5 -> {
+                    val params: LinearLayout.LayoutParams = LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                    )
+                    params.setMargins(5, 1, 10, 3)
+                    val waitingPlayer = TextView(context)
+
+                    waitingPlayer.layoutParams = ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                    )
+                    params.gravity = Gravity.CENTER
+                    waitingPlayer.layoutParams = params
+                    waitingPlayer.text = pseudo
+                    waitingPlayer.setTextColor(R.color.white)
+                    waitingPlayer.gravity = Gravity.CENTER
+                    waitingPlayer.textSize = 20F
+                    waitingPlayer.setTextAppearance(R.style.PlayersListStyle)
+                    layoutWaitingPlayers.addView(waitingPlayer)
+                }
             }
-        }
-    }
-    @SuppressLint("ResourceAsColor")
-    private fun displayPseudosWaitingList(users: List<UserEntity>, view: View, ){
-
-        val layoutWaitingPlayers = view.findViewById<LinearLayout>(R.id.layout_waiting_players_zone)
-
-        val sortedWaitingList = users.sortedBy { it.userPosition }
-        for (user in sortedWaitingList){
-            val pseudo = user.pseudo
-
-            val params: LinearLayout.LayoutParams = LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT)
-            params.setMargins(5, 1, 10, 3)
-            val waitingPlayer = TextView(context)
-
-            waitingPlayer.layoutParams = ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
-            params.gravity = Gravity.CENTER
-            waitingPlayer.layoutParams = params
-            waitingPlayer.text = pseudo
-            waitingPlayer.setTextColor(R.color.white)
-            waitingPlayer.gravity = Gravity.CENTER
-            waitingPlayer.textSize = 20F
-            waitingPlayer.setTextAppearance(R.style.PlayersListStyle)
-            layoutWaitingPlayers.addView(waitingPlayer)
-
         }
 
     }

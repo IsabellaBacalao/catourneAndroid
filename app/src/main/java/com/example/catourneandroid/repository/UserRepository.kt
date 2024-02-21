@@ -12,7 +12,7 @@ class UserRepository(private val userDao: UserDao) {
         return userDao.getUserById(userId)
     }
 
-    suspend fun getUserByIdTeam(teamId: Int): UserEntity? {
+    suspend fun getUserByIdTeam(teamId: Int): List<UserEntity> {
         return userDao.getUserByIdTeam(teamId)
     }
 

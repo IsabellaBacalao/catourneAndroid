@@ -35,7 +35,7 @@ class UserViewModel(private val repository: UserRepository) : ViewModel() {
     fun getUserByIdTeam(teamId: Int) {
         viewModelScope.launch {
             val user = repository.getUserByIdTeam(teamId)
-            _user.value = user
+            _allUsers.value = user
         }
     }
 

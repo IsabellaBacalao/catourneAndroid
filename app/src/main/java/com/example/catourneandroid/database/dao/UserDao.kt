@@ -13,8 +13,8 @@ interface UserDao {
     @Query("SELECT * FROM UserEntity WHERE idPseudo = :userId LIMIT 1")
     suspend fun getUserById(userId: Int): UserEntity?
 
-    @Query("SELECT * FROM UserEntity WHERE idTeam = :teamId LIMIT 1")
-    suspend fun getUserByIdTeam(teamId: Int): UserEntity?
+    @Query("SELECT * FROM UserEntity WHERE idTeam = :teamId")
+    suspend fun getUserByIdTeam(teamId: Int): List<UserEntity>
 
     @Query("SELECT * FROM UserEntity WHERE userPosition = :position")
     suspend fun getUsersByPosition(position: Int): List<UserEntity>

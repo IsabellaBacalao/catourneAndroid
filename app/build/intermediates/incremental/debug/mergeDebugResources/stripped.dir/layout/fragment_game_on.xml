@@ -5,6 +5,7 @@
     android:background="@drawable/background_on_game">
 
     <ImageButton
+        android:id="@+id/btnButYellow"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
@@ -14,6 +15,7 @@
         android:background="@drawable/but_jaune" />
 
     <ImageButton
+        android:id="@+id/btnButRed"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
