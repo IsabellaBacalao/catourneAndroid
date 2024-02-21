@@ -9,7 +9,7 @@ import com.example.catourneandroid.database.entity.UserEntity
 @Dao
 interface UserDao {
     @Query("SELECT * FROM UserEntity")
-    fun getAllUsers(): List<UserEntity>
+    suspend fun getAllUsers(): List<UserEntity>
 
     @Query("SELECT * FROM UserEntity WHERE idPseudo = :userId LIMIT 1")
     suspend fun getUserById(userId: Int): UserEntity?
@@ -18,7 +18,7 @@ interface UserDao {
     suspend fun getUserByIdTeam(teamId: Int): UserEntity?
 
     @Insert
-    fun insertUser(user: UserEntity)
+    suspend fun insertUser(user: UserEntity)
 
     @Query("DELETE FROM UserEntity")
     suspend fun deleteAllUsers()

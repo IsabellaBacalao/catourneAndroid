@@ -82,15 +82,21 @@ public final class UserDao_Impl implements UserDao {
   }
 
   @Override
-  public void insertUser(final UserEntity user) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __insertionAdapterOfUserEntity.insert(user);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+  public Object insertUser(final UserEntity user, final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __insertionAdapterOfUserEntity.insert(user);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, $completion);
   }
 
   @Override
@@ -142,43 +148,49 @@ public final class UserDao_Impl implements UserDao {
   }
 
   @Override
-  public List<UserEntity> getAllUsers() {
+  public Object getAllUsers(final Continuation<? super List<UserEntity>> $completion) {
     final String _sql = "SELECT * FROM UserEntity";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    __db.assertNotSuspendingTransaction();
-    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-    try {
-      final int _cursorIndexOfIdPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "idPseudo");
-      final int _cursorIndexOfPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "pseudo");
-      final int _cursorIndexOfScore = CursorUtil.getColumnIndexOrThrow(_cursor, "score");
-      final int _cursorIndexOfIdTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "idTeam");
-      final List<UserEntity> _result = new ArrayList<UserEntity>(_cursor.getCount());
-      while (_cursor.moveToNext()) {
-        final UserEntity _item;
-        final Integer _tmpIdPseudo;
-        if (_cursor.isNull(_cursorIndexOfIdPseudo)) {
-          _tmpIdPseudo = null;
-        } else {
-          _tmpIdPseudo = _cursor.getInt(_cursorIndexOfIdPseudo);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<UserEntity>>() {
+      @Override
+      @NonNull
+      public List<UserEntity> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfIdPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "idPseudo");
+          final int _cursorIndexOfPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "pseudo");
+          final int _cursorIndexOfScore = CursorUtil.getColumnIndexOrThrow(_cursor, "score");
+          final int _cursorIndexOfIdTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "idTeam");
+          final List<UserEntity> _result = new ArrayList<UserEntity>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final UserEntity _item;
+            final Integer _tmpIdPseudo;
+            if (_cursor.isNull(_cursorIndexOfIdPseudo)) {
+              _tmpIdPseudo = null;
+            } else {
+              _tmpIdPseudo = _cursor.getInt(_cursorIndexOfIdPseudo);
+            }
+            final String _tmpPseudo;
+            if (_cursor.isNull(_cursorIndexOfPseudo)) {
+              _tmpPseudo = null;
+            } else {
+              _tmpPseudo = _cursor.getString(_cursorIndexOfPseudo);
+            }
+            final int _tmpScore;
+            _tmpScore = _cursor.getInt(_cursorIndexOfScore);
+            final int _tmpIdTeam;
+            _tmpIdTeam = _cursor.getInt(_cursorIndexOfIdTeam);
+            _item = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpScore,_tmpIdTeam);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
         }
-        final String _tmpPseudo;
-        if (_cursor.isNull(_cursorIndexOfPseudo)) {
-          _tmpPseudo = null;
-        } else {
-          _tmpPseudo = _cursor.getString(_cursorIndexOfPseudo);
-        }
-        final int _tmpScore;
-        _tmpScore = _cursor.getInt(_cursorIndexOfScore);
-        final int _tmpIdTeam;
-        _tmpIdTeam = _cursor.getInt(_cursorIndexOfIdTeam);
-        _item = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpScore,_tmpIdTeam);
-        _result.add(_item);
       }
-      return _result;
-    } finally {
-      _cursor.close();
-      _statement.release();
-    }
+    }, $completion);
   }
 
   @Override
