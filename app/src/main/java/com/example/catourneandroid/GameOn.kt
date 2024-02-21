@@ -1,59 +1,84 @@
 package com.example.catourneandroid
 
+import TeamViewModel
+import UserViewModel
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.Gravity
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import com.example.catourneandroid.database.entity.UserEntity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [GameOn.newInstance] factory method to
- * create an instance of this fragment.
- */
 class GameOn : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private val teamViewModel: TeamViewModel by viewModels(factoryProducer = { TeamViewModel.provideFactory() })
+    private val userViewModel: UserViewModel by viewModels(factoryProducer = { UserViewModel.provideFactory() })
+    /*
+    YELLOW ATTAQUE      1
+    YELLOW DEF          2
+
+    RED ATTAQUE         3
+    RED DEF             4
+     */
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val view = inflater.inflate(R.layout.fragment_game_on, container, false)
+
+        //GET ALL OF THE PLAYERS
+        userViewModel.allUsers.observe(viewLifecycleOwner, Observer { users ->
+            displayPseudosByTeam(users, view)
+        })
+        userViewModel.getAllUsers()
+
+        return view
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_game_on, container, false)
-    }
+    @SuppressLint("ResourceAsColor")
+    private fun displayPseudosByTeam(users: List<UserEntity>, view: View, ){
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment GameOn.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            GameOn().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        val y_attaque = view.findViewById<TextView>(R.id.yellow_team_atq)
+        val y_def = view.findViewById<TextView>(R.id.yellow_team_def)
+        val r_attaque = view.findViewById<TextView>(R.id.red_team_atq)
+        val r_def = view.findViewById<TextView>(R.id.red_team_def)
+
+
+        for (user in users) {
+            val teamId = user.idTeam
+            val pseudo = user.pseudo
+            when (teamId) {
+                1 -> {y_attaque.text = pseudo}
+                2 -> {y_def.text = pseudo}
+                3 -> {r_attaque.text = pseudo}
+                4 -> {r_def.text = pseudo}
+                5 -> {
+                    val layoutWaitingPlayers = view.findViewById<LinearLayout>(R.id.layout_waiting_players_zone)
+
+                    val params: LinearLayout.LayoutParams = LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT)
+                    params.setMargins(5, 1, 10, 3)
+                    val waitingPlayer = TextView(context)
+
+                    waitingPlayer.layoutParams = ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT
+                    )
+                    params.gravity = Gravity.CENTER
+                    waitingPlayer.layoutParams = params
+                    waitingPlayer.text = pseudo
+                    waitingPlayer.setTextColor(R.color.white)
+                    waitingPlayer.gravity = Gravity.CENTER
+                    waitingPlayer.textSize = 20F
+                    waitingPlayer.setTextAppearance(R.style.PlayersListStyle)
+                    layoutWaitingPlayers.addView(waitingPlayer)
                 }
             }
+        }
     }
 }

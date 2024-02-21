@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/michl/.gradle/caches/transforms-3/a690b269fdae87765d7d9b2f00727dff/transformed/material-1.11.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "/Users/michl/.gradle/caches/transforms-3/56af212e940d1f2bde023f0cf7bfa9c5/transformed/material-1.11.0/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "/Users/michl/.gradle/caches/transforms-3/dbe3962d9aec76139097d4ab0707e85b/transformed/appcompat-1.6.1/res/values-night-v8/values-night-v8.xml",
+                    "source": "/Users/michl/.gradle/caches/transforms-3/60b492a510ec931c8abbf232e0a5612c/transformed/appcompat-1.6.1/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -3375,6 +3375,7 @@ id jumpToStart
 id labeled
 id layout
 id layout_players_zone
+id layout_waiting_players_zone
 id left
 id leftToRight
 id legacy
@@ -3506,6 +3507,8 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id red_team_atq
+id red_team_def
 id report_drawn
 id reverseSawtooth
 id right
@@ -3524,6 +3527,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scroll_waiting_players
 id scrollable
 id search_badge
 id search_bar
@@ -3647,6 +3651,8 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
+id yellow_team_atq
+id yellow_team_def
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration

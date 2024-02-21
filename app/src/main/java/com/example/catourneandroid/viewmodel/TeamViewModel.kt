@@ -47,6 +47,17 @@ class TeamViewModel(private val repository: TeamRepository) : ViewModel() {
         }
     }
 
+    fun updateTeam(team: TeamEntity) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.getTeamById(team.idTeam)?.let {
+                val updatedTeam = it.copy(positionTeam = team.positionTeam)
+                repository.updateTeam(updatedTeam)
+            } ?: run {
+                repository.insertTeam(team)
+            }
+        }
+    }
+
     companion object {
         fun provideFactory() : ViewModelProvider.Factory {
             return object : ViewModelProvider.Factory {

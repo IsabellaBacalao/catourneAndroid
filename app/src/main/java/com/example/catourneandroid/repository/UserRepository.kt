@@ -12,6 +12,15 @@ class UserRepository(private val userDao: UserDao) {
     suspend fun getUserById(userId: Int): UserEntity? {
         return userDao.getUserById(userId)
     }
+
+    suspend fun getUserByIdTeam(teamId: Int): UserEntity? {
+        return userDao.getUserByIdTeam(teamId)
+    }
+
+    suspend fun deleteAllUsers() {
+        userDao.deleteAllUsers()
+    }
+
     suspend fun insertUser(user: UserEntity) {
         userDao.insertUser(user)
     }
