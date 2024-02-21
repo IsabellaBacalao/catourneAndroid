@@ -35,10 +35,6 @@ public final class UserDao_Impl implements UserDao {
 
   private final SharedSQLiteStatement __preparedStmtOfUpdateScore;
 
-  private final SharedSQLiteStatement __preparedStmtOfUpdatePositionUser;
-
-  private final SharedSQLiteStatement __preparedStmtOfUpdateIdTeamByUserId;
-
   private final SharedSQLiteStatement __preparedStmtOfDeleteAllUsers;
 
   private final SharedSQLiteStatement __preparedStmtOfDeleteUserById;
@@ -74,23 +70,7 @@ public final class UserDao_Impl implements UserDao {
       @Override
       @NonNull
       public String createQuery() {
-        final String _query = "UPDATE UserEntity SET score = ? WHERE idPseudo = ?";
-        return _query;
-      }
-    };
-    this.__preparedStmtOfUpdatePositionUser = new SharedSQLiteStatement(__db) {
-      @Override
-      @NonNull
-      public String createQuery() {
         final String _query = "UPDATE UserEntity SET userPosition = ? WHERE idPseudo = ?";
-        return _query;
-      }
-    };
-    this.__preparedStmtOfUpdateIdTeamByUserId = new SharedSQLiteStatement(__db) {
-      @Override
-      @NonNull
-      public String createQuery() {
-        final String _query = "UPDATE UserEntity SET idTeam = ? WHERE idPseudo = ?";
         return _query;
       }
     };
@@ -131,41 +111,13 @@ public final class UserDao_Impl implements UserDao {
   }
 
   @Override
-  public Object updateScore(final int userId, final int newScore,
+  public Object updateScore(final int userId, final int newPosition,
       final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
       public Unit call() throws Exception {
         final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateScore.acquire();
-        int _argIndex = 1;
-        _stmt.bindLong(_argIndex, newScore);
-        _argIndex = 2;
-        _stmt.bindLong(_argIndex, userId);
-        try {
-          __db.beginTransaction();
-          try {
-            _stmt.executeUpdateDelete();
-            __db.setTransactionSuccessful();
-            return Unit.INSTANCE;
-          } finally {
-            __db.endTransaction();
-          }
-        } finally {
-          __preparedStmtOfUpdateScore.release(_stmt);
-        }
-      }
-    }, $completion);
-  }
-
-  @Override
-  public Object updatePositionUser(final int userId, final int newPosition,
-      final Continuation<? super Unit> $completion) {
-    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
-      @Override
-      @NonNull
-      public Unit call() throws Exception {
-        final SupportSQLiteStatement _stmt = __preparedStmtOfUpdatePositionUser.acquire();
         int _argIndex = 1;
         _stmt.bindLong(_argIndex, newPosition);
         _argIndex = 2;
@@ -180,35 +132,7 @@ public final class UserDao_Impl implements UserDao {
             __db.endTransaction();
           }
         } finally {
-          __preparedStmtOfUpdatePositionUser.release(_stmt);
-        }
-      }
-    }, $completion);
-  }
-
-  @Override
-  public Object updateIdTeamByUserId(final int userId, final int newIdTeam,
-      final Continuation<? super Unit> $completion) {
-    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
-      @Override
-      @NonNull
-      public Unit call() throws Exception {
-        final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateIdTeamByUserId.acquire();
-        int _argIndex = 1;
-        _stmt.bindLong(_argIndex, newIdTeam);
-        _argIndex = 2;
-        _stmt.bindLong(_argIndex, userId);
-        try {
-          __db.beginTransaction();
-          try {
-            _stmt.executeUpdateDelete();
-            __db.setTransactionSuccessful();
-            return Unit.INSTANCE;
-          } finally {
-            __db.endTransaction();
-          }
-        } finally {
-          __preparedStmtOfUpdateIdTeamByUserId.release(_stmt);
+          __preparedStmtOfUpdateScore.release(_stmt);
         }
       }
     }, $completion);

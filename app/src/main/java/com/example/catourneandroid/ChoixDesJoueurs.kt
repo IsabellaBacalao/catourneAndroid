@@ -23,7 +23,7 @@ class ChoixDesJoueurs : Fragment() {
     private val teamViewModel: TeamViewModel by viewModels(factoryProducer = { TeamViewModel.provideFactory() })
     private val userViewModel: UserViewModel by viewModels(factoryProducer = { UserViewModel.provideFactory() })
     private var count = 1;
-    private var attentepos = 4;
+    private var attentePosition = 1;
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -51,6 +51,7 @@ class ChoixDesJoueurs : Fragment() {
         teamViewModel.insertTeam(teamYellow2)
         teamViewModel.insertTeam(teamRed1)
         teamViewModel.insertTeam(teamRed2)
+        teamViewModel.insertTeam(existingTeam)
 
         //Add a new Player at the game
         btnNewPlayer.setOnClickListener {
@@ -73,14 +74,12 @@ class ChoixDesJoueurs : Fragment() {
 
             //AJOUT DANS UNE TEAM
             if(count > 4) {
-                val user = UserEntity(pseudo = namePlayer, idTeam = 5)
+                val user = UserEntity(pseudo = namePlayer, userPosition = attentePosition, idTeam = 5)
                 userViewModel.insertUser(user)
-                val updatedTeam = existingTeam.copy(positionTeam = attentepos)
-                teamViewModel.updateTeam(updatedTeam)
-                attentepos +=1;
+                attentePosition +=1;
 
             }else {
-                val user = UserEntity(pseudo = namePlayer, idTeam = count)
+                val user = UserEntity(pseudo = namePlayer, userPosition = 0, idTeam = count)
                 userViewModel.insertUser(user)
                 count += 1
             }
