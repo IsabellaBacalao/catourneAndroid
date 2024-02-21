@@ -13,7 +13,6 @@ class TeamRepository(private val teamDao: TeamDao) {
         return teamDao.getTeamById(teamId)
     }
 
-    // Function to insert a new team
     suspend fun insertTeam(team: TeamEntity) {
         teamDao.insertTeam(team)
     }

@@ -17,7 +17,6 @@ class UserViewModel(private val repository: UserRepository) : ViewModel() {
     private var _user = MutableLiveData<UserEntity?>()
 
     val allUsers: LiveData<List<UserEntity>> = _allUsers
-    val user: MutableLiveData<UserEntity?> = _user
 
     fun getAllUsers() {
         viewModelScope.launch {
@@ -37,6 +36,19 @@ class UserViewModel(private val repository: UserRepository) : ViewModel() {
         viewModelScope.launch {
             val user = repository.getUserByIdTeam(teamId)
             _user.value = user
+        }
+    }
+
+    fun getUsersByPosition(positionUser: Int) {
+        viewModelScope.launch {
+            val result = repository.getUsersByPosition(positionUser)
+            _allUsers.value = result
+        }
+    }
+
+    fun updateScore(user: UserEntity) {
+        viewModelScope.launch {
+            repository.updateScore(user)
         }
     }
 
