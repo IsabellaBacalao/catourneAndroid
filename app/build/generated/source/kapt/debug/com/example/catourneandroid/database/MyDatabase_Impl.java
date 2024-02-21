@@ -36,7 +36,7 @@ public final class MyDatabase_Impl extends MyDatabase {
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(4) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(5) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `UserEntity` (`idPseudo` INTEGER PRIMARY KEY AUTOINCREMENT, `pseudo` TEXT NOT NULL, `score` INTEGER NOT NULL, `userPosition` INTEGER NOT NULL, `idTeam` INTEGER NOT NULL, FOREIGN KEY(`idTeam`) REFERENCES `TeamEntity`(`idTeam`) ON UPDATE NO ACTION ON DELETE CASCADE )");

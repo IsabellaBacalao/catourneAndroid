@@ -33,6 +33,12 @@ public final class UserDao_Impl implements UserDao {
 
   private final EntityInsertionAdapter<UserEntity> __insertionAdapterOfUserEntity;
 
+  private final SharedSQLiteStatement __preparedStmtOfUpdateScore;
+
+  private final SharedSQLiteStatement __preparedStmtOfUpdatePositionUser;
+
+  private final SharedSQLiteStatement __preparedStmtOfUpdateIdTeamByUserId;
+
   private final SharedSQLiteStatement __preparedStmtOfDeleteAllUsers;
 
   private final SharedSQLiteStatement __preparedStmtOfDeleteUserById;
@@ -43,7 +49,7 @@ public final class UserDao_Impl implements UserDao {
       @Override
       @NonNull
       protected String createQuery() {
-        return "INSERT OR ABORT INTO `UserEntity` (`idPseudo`,`pseudo`,`score`,`idTeam`) VALUES (?,?,?,?)";
+        return "INSERT OR ABORT INTO `UserEntity` (`idPseudo`,`pseudo`,`score`,`userPosition`,`idTeam`) VALUES (?,?,?,?,?)";
       }
 
       @Override
@@ -60,7 +66,32 @@ public final class UserDao_Impl implements UserDao {
           statement.bindString(2, entity.getPseudo());
         }
         statement.bindLong(3, entity.getScore());
-        statement.bindLong(4, entity.getIdTeam());
+        statement.bindLong(4, entity.getUserPosition());
+        statement.bindLong(5, entity.getIdTeam());
+      }
+    };
+    this.__preparedStmtOfUpdateScore = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "UPDATE UserEntity SET score = ? WHERE idPseudo = ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfUpdatePositionUser = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "UPDATE UserEntity SET userPosition = ? WHERE idPseudo = ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfUpdateIdTeamByUserId = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "UPDATE UserEntity SET idTeam = ? WHERE idPseudo = ?";
+        return _query;
       }
     };
     this.__preparedStmtOfDeleteAllUsers = new SharedSQLiteStatement(__db) {
@@ -94,6 +125,90 @@ public final class UserDao_Impl implements UserDao {
           return Unit.INSTANCE;
         } finally {
           __db.endTransaction();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object updateScore(final int userId, final int newScore,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateScore.acquire();
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, newScore);
+        _argIndex = 2;
+        _stmt.bindLong(_argIndex, userId);
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfUpdateScore.release(_stmt);
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object updatePositionUser(final int userId, final int newPosition,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfUpdatePositionUser.acquire();
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, newPosition);
+        _argIndex = 2;
+        _stmt.bindLong(_argIndex, userId);
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfUpdatePositionUser.release(_stmt);
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object updateIdTeamByUserId(final int userId, final int newIdTeam,
+      final Continuation<? super Unit> $completion) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      @NonNull
+      public Unit call() throws Exception {
+        final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateIdTeamByUserId.acquire();
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, newIdTeam);
+        _argIndex = 2;
+        _stmt.bindLong(_argIndex, userId);
+        try {
+          __db.beginTransaction();
+          try {
+            _stmt.executeUpdateDelete();
+            __db.setTransactionSuccessful();
+            return Unit.INSTANCE;
+          } finally {
+            __db.endTransaction();
+          }
+        } finally {
+          __preparedStmtOfUpdateIdTeamByUserId.release(_stmt);
         }
       }
     }, $completion);
@@ -161,6 +276,7 @@ public final class UserDao_Impl implements UserDao {
           final int _cursorIndexOfIdPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "idPseudo");
           final int _cursorIndexOfPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "pseudo");
           final int _cursorIndexOfScore = CursorUtil.getColumnIndexOrThrow(_cursor, "score");
+          final int _cursorIndexOfUserPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "userPosition");
           final int _cursorIndexOfIdTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "idTeam");
           final List<UserEntity> _result = new ArrayList<UserEntity>(_cursor.getCount());
           while (_cursor.moveToNext()) {
@@ -179,9 +295,11 @@ public final class UserDao_Impl implements UserDao {
             }
             final int _tmpScore;
             _tmpScore = _cursor.getInt(_cursorIndexOfScore);
+            final int _tmpUserPosition;
+            _tmpUserPosition = _cursor.getInt(_cursorIndexOfUserPosition);
             final int _tmpIdTeam;
             _tmpIdTeam = _cursor.getInt(_cursorIndexOfIdTeam);
-            _item = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpScore,_tmpIdTeam);
+            _item = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpScore,_tmpUserPosition,_tmpIdTeam);
             _result.add(_item);
           }
           return _result;
@@ -209,6 +327,7 @@ public final class UserDao_Impl implements UserDao {
           final int _cursorIndexOfIdPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "idPseudo");
           final int _cursorIndexOfPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "pseudo");
           final int _cursorIndexOfScore = CursorUtil.getColumnIndexOrThrow(_cursor, "score");
+          final int _cursorIndexOfUserPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "userPosition");
           final int _cursorIndexOfIdTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "idTeam");
           final UserEntity _result;
           if (_cursor.moveToFirst()) {
@@ -226,9 +345,11 @@ public final class UserDao_Impl implements UserDao {
             }
             final int _tmpScore;
             _tmpScore = _cursor.getInt(_cursorIndexOfScore);
+            final int _tmpUserPosition;
+            _tmpUserPosition = _cursor.getInt(_cursorIndexOfUserPosition);
             final int _tmpIdTeam;
             _tmpIdTeam = _cursor.getInt(_cursorIndexOfIdTeam);
-            _result = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpScore,_tmpIdTeam);
+            _result = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpScore,_tmpUserPosition,_tmpIdTeam);
           } else {
             _result = null;
           }
@@ -258,6 +379,7 @@ public final class UserDao_Impl implements UserDao {
           final int _cursorIndexOfIdPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "idPseudo");
           final int _cursorIndexOfPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "pseudo");
           final int _cursorIndexOfScore = CursorUtil.getColumnIndexOrThrow(_cursor, "score");
+          final int _cursorIndexOfUserPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "userPosition");
           final int _cursorIndexOfIdTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "idTeam");
           final UserEntity _result;
           if (_cursor.moveToFirst()) {
@@ -275,11 +397,65 @@ public final class UserDao_Impl implements UserDao {
             }
             final int _tmpScore;
             _tmpScore = _cursor.getInt(_cursorIndexOfScore);
+            final int _tmpUserPosition;
+            _tmpUserPosition = _cursor.getInt(_cursorIndexOfUserPosition);
             final int _tmpIdTeam;
             _tmpIdTeam = _cursor.getInt(_cursorIndexOfIdTeam);
-            _result = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpScore,_tmpIdTeam);
+            _result = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpScore,_tmpUserPosition,_tmpIdTeam);
           } else {
             _result = null;
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, $completion);
+  }
+
+  @Override
+  public Object getUsersByPosition(final int position,
+      final Continuation<? super List<UserEntity>> $completion) {
+    final String _sql = "SELECT * FROM UserEntity WHERE userPosition = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, position);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<UserEntity>>() {
+      @Override
+      @NonNull
+      public List<UserEntity> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfIdPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "idPseudo");
+          final int _cursorIndexOfPseudo = CursorUtil.getColumnIndexOrThrow(_cursor, "pseudo");
+          final int _cursorIndexOfScore = CursorUtil.getColumnIndexOrThrow(_cursor, "score");
+          final int _cursorIndexOfUserPosition = CursorUtil.getColumnIndexOrThrow(_cursor, "userPosition");
+          final int _cursorIndexOfIdTeam = CursorUtil.getColumnIndexOrThrow(_cursor, "idTeam");
+          final List<UserEntity> _result = new ArrayList<UserEntity>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final UserEntity _item;
+            final Integer _tmpIdPseudo;
+            if (_cursor.isNull(_cursorIndexOfIdPseudo)) {
+              _tmpIdPseudo = null;
+            } else {
+              _tmpIdPseudo = _cursor.getInt(_cursorIndexOfIdPseudo);
+            }
+            final String _tmpPseudo;
+            if (_cursor.isNull(_cursorIndexOfPseudo)) {
+              _tmpPseudo = null;
+            } else {
+              _tmpPseudo = _cursor.getString(_cursorIndexOfPseudo);
+            }
+            final int _tmpScore;
+            _tmpScore = _cursor.getInt(_cursorIndexOfScore);
+            final int _tmpUserPosition;
+            _tmpUserPosition = _cursor.getInt(_cursorIndexOfUserPosition);
+            final int _tmpIdTeam;
+            _tmpIdTeam = _cursor.getInt(_cursorIndexOfIdTeam);
+            _item = new UserEntity(_tmpIdPseudo,_tmpPseudo,_tmpScore,_tmpUserPosition,_tmpIdTeam);
+            _result.add(_item);
           }
           return _result;
         } finally {

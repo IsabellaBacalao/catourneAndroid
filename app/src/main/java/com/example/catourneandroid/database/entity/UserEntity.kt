@@ -18,7 +18,7 @@ import androidx.room.ForeignKey
 data class UserEntity(
     @PrimaryKey(autoGenerate = true) val idPseudo: Int? = null,
     val pseudo: String,
-    val score: Int = 0,
-    val userPosition: Int = 0,
-    val idTeam: Int
+    var score: Int = 0,
+    var userPosition: Int = 0,
+    var idTeam: Int
 )

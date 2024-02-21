@@ -28,6 +28,22 @@ class UserRepository(private val userDao: UserDao) {
         }
     }
 
+    suspend fun updatePositionUser(user: UserEntity) {
+        val userId = user.idPseudo
+        val newPosition = user.userPosition
+        if (userId != null) {
+            userDao.updatePositionUser(userId, newPosition)
+        }
+    }
+
+    suspend fun updateIdTeamByUserId(user: UserEntity) {
+        val userId = user.idPseudo
+        val newIdTeam = user.idTeam
+        if (userId != null) {
+            userDao.updateIdTeamByUserId(userId, newIdTeam)
+        }
+    }
+
     suspend fun deleteAllUsers() {
         userDao.deleteAllUsers()
     }

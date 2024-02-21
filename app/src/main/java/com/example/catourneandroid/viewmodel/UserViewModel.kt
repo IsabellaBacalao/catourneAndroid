@@ -52,6 +52,18 @@ class UserViewModel(private val repository: UserRepository) : ViewModel() {
         }
     }
 
+    fun updatePositionUser(user: UserEntity) {
+        viewModelScope.launch {
+            repository.updatePositionUser(user)
+        }
+    }
+
+    fun updateIdTeamByUserId(user: UserEntity) {
+        viewModelScope.launch {
+            repository.updateIdTeamByUserId(user)
+        }
+    }
+
     fun deleteUsers() {
         viewModelScope.launch {
             repository.deleteAllUsers()
