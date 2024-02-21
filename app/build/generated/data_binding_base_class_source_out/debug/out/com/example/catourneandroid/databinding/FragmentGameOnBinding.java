@@ -4,7 +4,9 @@ package com.example.catourneandroid.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,12 +22,34 @@ public final class FragmentGameOnBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final TextView afficheplayers;
+  public final LinearLayout layoutWaitingPlayersZone;
+
+  @NonNull
+  public final TextView redTeamAtq;
+
+  @NonNull
+  public final TextView redTeamDef;
+
+  @NonNull
+  public final ScrollView scrollWaitingPlayers;
+
+  @NonNull
+  public final TextView yellowTeamAtq;
+
+  @NonNull
+  public final TextView yellowTeamDef;
 
   private FragmentGameOnBinding(@NonNull RelativeLayout rootView,
-      @NonNull TextView afficheplayers) {
+      @NonNull LinearLayout layoutWaitingPlayersZone, @NonNull TextView redTeamAtq,
+      @NonNull TextView redTeamDef, @NonNull ScrollView scrollWaitingPlayers,
+      @NonNull TextView yellowTeamAtq, @NonNull TextView yellowTeamDef) {
     this.rootView = rootView;
-    this.afficheplayers = afficheplayers;
+    this.layoutWaitingPlayersZone = layoutWaitingPlayersZone;
+    this.redTeamAtq = redTeamAtq;
+    this.redTeamDef = redTeamDef;
+    this.scrollWaitingPlayers = scrollWaitingPlayers;
+    this.yellowTeamAtq = yellowTeamAtq;
+    this.yellowTeamDef = yellowTeamDef;
   }
 
   @Override
@@ -55,13 +79,44 @@ public final class FragmentGameOnBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.afficheplayers;
-      TextView afficheplayers = ViewBindings.findChildViewById(rootView, id);
-      if (afficheplayers == null) {
+      id = R.id.layout_waiting_players_zone;
+      LinearLayout layoutWaitingPlayersZone = ViewBindings.findChildViewById(rootView, id);
+      if (layoutWaitingPlayersZone == null) {
         break missingId;
       }
 
-      return new FragmentGameOnBinding((RelativeLayout) rootView, afficheplayers);
+      id = R.id.red_team_atq;
+      TextView redTeamAtq = ViewBindings.findChildViewById(rootView, id);
+      if (redTeamAtq == null) {
+        break missingId;
+      }
+
+      id = R.id.red_team_def;
+      TextView redTeamDef = ViewBindings.findChildViewById(rootView, id);
+      if (redTeamDef == null) {
+        break missingId;
+      }
+
+      id = R.id.scroll_waiting_players;
+      ScrollView scrollWaitingPlayers = ViewBindings.findChildViewById(rootView, id);
+      if (scrollWaitingPlayers == null) {
+        break missingId;
+      }
+
+      id = R.id.yellow_team_atq;
+      TextView yellowTeamAtq = ViewBindings.findChildViewById(rootView, id);
+      if (yellowTeamAtq == null) {
+        break missingId;
+      }
+
+      id = R.id.yellow_team_def;
+      TextView yellowTeamDef = ViewBindings.findChildViewById(rootView, id);
+      if (yellowTeamDef == null) {
+        break missingId;
+      }
+
+      return new FragmentGameOnBinding((RelativeLayout) rootView, layoutWaitingPlayersZone,
+          redTeamAtq, redTeamDef, scrollWaitingPlayers, yellowTeamAtq, yellowTeamDef);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

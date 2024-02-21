@@ -3203,7 +3203,6 @@ int id action_text 0x7f080046
 int id actions 0x7f080047
 int id activity_chooser_view_content 0x7f080048
 int id add 0x7f080049
-int id afficheplayers 0x7f08004a
 int id alertTitle 0x7f08004b
 int id aligned 0x7f08004c
 int id all 0x7f08004d
@@ -3375,6 +3374,7 @@ int id jumpToStart 0x7f0800f2
 int id labeled 0x7f0800f3
 int id layout 0x7f0800f4
 int id layout_players_zone 0x7f0800f5
+int id layout_waiting_players_zone 0x7f08020a
 int id left 0x7f0800f6
 int id leftToRight 0x7f0800f7
 int id legacy 0x7f0800f8
@@ -3506,6 +3506,8 @@ int id progress_horizontal 0x7f080175
 int id radio 0x7f080176
 int id ratio 0x7f080177
 int id rectangles 0x7f080178
+int id red_team_atq 0x7f080206
+int id red_team_def 0x7f080207
 int id report_drawn 0x7f080179
 int id reverseSawtooth 0x7f08017a
 int id right 0x7f08017b
@@ -3524,6 +3526,7 @@ int id scroll 0x7f080187
 int id scrollIndicatorDown 0x7f080188
 int id scrollIndicatorUp 0x7f080189
 int id scrollView 0x7f08018a
+int id scroll_waiting_players 0x7f08020b
 int id scrollable 0x7f08018b
 int id search_badge 0x7f08018c
 int id search_bar 0x7f08018d
@@ -3647,6 +3650,8 @@ int id wrap_content 0x7f080202
 int id wrap_content_constrained 0x7f080203
 int id x_left 0x7f080204
 int id x_right 0x7f080205
+int id yellow_team_atq 0x7f080208
+int id yellow_team_def 0x7f080209
 int integer abc_config_activityDefaultDur 0x7f090000
 int integer abc_config_activityShortDur 0x7f090001
 int integer app_bar_elevation_anim_duration 0x7f090002

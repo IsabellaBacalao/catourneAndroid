@@ -21,7 +21,6 @@ drawable rounded_bg
 id ScrollViewPlayers
 id action_choixDesJoueurs_to_gameOn
 id action_homepage_to_choixDesJoueurs
-id afficheplayers
 id btnFragmentChoixDesJoueurs
 id btnStartAGame
 id button_add_player
@@ -31,7 +30,13 @@ id gameOn
 id homepage
 id input_text_players
 id layout_players_zone
+id layout_waiting_players_zone
 id nav_graph_home
+id red_team_atq
+id red_team_def
+id scroll_waiting_players
+id yellow_team_atq
+id yellow_team_def
 layout activity_main
 layout fragment_choix_des_joueurs
 layout fragment_game_on

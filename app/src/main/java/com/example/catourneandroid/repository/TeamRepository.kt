@@ -1,11 +1,12 @@
 package com.example.catourneandroid.repository
 
+import androidx.room.Query
 import com.example.catourneandroid.database.dao.TeamDao
 import com.example.catourneandroid.database.entity.TeamEntity
 
 class TeamRepository(private val teamDao: TeamDao) {
 
-    suspend fun getAllTeams(): List<TeamEntity> =
+     suspend fun getAllTeams(): List<TeamEntity> =
         teamDao.getAllTeams()
 
     suspend fun getTeamById(teamId: Int): TeamEntity? {
