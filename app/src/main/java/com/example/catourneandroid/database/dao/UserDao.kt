@@ -22,8 +22,14 @@ interface UserDao {
     @Insert
     suspend fun insertUser(user: UserEntity)
 
+    @Query("UPDATE UserEntity SET score = :newScore WHERE idPseudo = :userId")
+    suspend fun updateScore(userId: Int, newScore: Int)
+
     @Query("UPDATE UserEntity SET userPosition = :newPosition WHERE idPseudo = :userId")
-    suspend fun updateScore(userId: Int, newPosition: Int)
+    suspend fun updatePositionUser(userId: Int, newPosition: Int)
+
+    @Query("UPDATE UserEntity SET idTeam = :newIdTeam WHERE idPseudo = :userId")
+    suspend fun updateIdTeamByUserId(userId: Int, newIdTeam: Int)
 
     @Query("DELETE FROM UserEntity")
     suspend fun deleteAllUsers()
