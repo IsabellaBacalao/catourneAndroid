@@ -9,7 +9,7 @@ import com.example.catourneandroid.database.dao.UserDao
 import com.example.catourneandroid.database.entity.TeamEntity
 import com.example.catourneandroid.database.entity.UserEntity
 
-@Database(entities = [UserEntity::class, TeamEntity::class], version = 4, exportSchema = false)
+@Database(entities = [UserEntity::class, TeamEntity::class], version = 5, exportSchema = false)
 abstract class MyDatabase : RoomDatabase() {
     
     abstract fun userDao(): UserDao
