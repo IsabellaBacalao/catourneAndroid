@@ -3232,6 +3232,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnButRed
+id btnButYellow
 id btnFragmentChoixDesJoueurs
 id btnStartAGame
 id buttonPanel
