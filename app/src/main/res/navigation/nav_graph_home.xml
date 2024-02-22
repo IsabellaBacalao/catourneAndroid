@@ -24,5 +24,14 @@
         android:id="@+id/gameOn"
         android:name="com.example.catourneandroid.GameOn"
         android:label="fragment_game_on"
-        tools:layout="@layout/fragment_game_on" />
+        tools:layout="@layout/fragment_game_on" >
+        <action
+            android:id="@+id/action_gameOn_to_score"
+            app:destination="@id/score" />
+    </fragment>
+    <fragment
+        android:id="@+id/score"
+        android:name="com.example.catourneandroid.Score"
+        android:label="fragment_score"
+        tools:layout="@layout/fragment_score" />
 </navigation>

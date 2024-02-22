@@ -29,6 +29,9 @@ public final class FragmentGameOnBinding implements ViewBinding {
   public final ImageButton btnButYellow;
 
   @NonNull
+  public final ImageButton btnGoScore;
+
+  @NonNull
   public final LinearLayout layoutWaitingPlayersZone;
 
   @NonNull
@@ -47,13 +50,14 @@ public final class FragmentGameOnBinding implements ViewBinding {
   public final TextView yellowTeamDef;
 
   private FragmentGameOnBinding(@NonNull RelativeLayout rootView, @NonNull ImageButton btnButRed,
-      @NonNull ImageButton btnButYellow, @NonNull LinearLayout layoutWaitingPlayersZone,
-      @NonNull TextView redTeamAtq, @NonNull TextView redTeamDef,
-      @NonNull ScrollView scrollWaitingPlayers, @NonNull TextView yellowTeamAtq,
-      @NonNull TextView yellowTeamDef) {
+      @NonNull ImageButton btnButYellow, @NonNull ImageButton btnGoScore,
+      @NonNull LinearLayout layoutWaitingPlayersZone, @NonNull TextView redTeamAtq,
+      @NonNull TextView redTeamDef, @NonNull ScrollView scrollWaitingPlayers,
+      @NonNull TextView yellowTeamAtq, @NonNull TextView yellowTeamDef) {
     this.rootView = rootView;
     this.btnButRed = btnButRed;
     this.btnButYellow = btnButYellow;
+    this.btnGoScore = btnGoScore;
     this.layoutWaitingPlayersZone = layoutWaitingPlayersZone;
     this.redTeamAtq = redTeamAtq;
     this.redTeamDef = redTeamDef;
@@ -101,6 +105,12 @@ public final class FragmentGameOnBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnGoScore;
+      ImageButton btnGoScore = ViewBindings.findChildViewById(rootView, id);
+      if (btnGoScore == null) {
+        break missingId;
+      }
+
       id = R.id.layout_waiting_players_zone;
       LinearLayout layoutWaitingPlayersZone = ViewBindings.findChildViewById(rootView, id);
       if (layoutWaitingPlayersZone == null) {
@@ -138,8 +148,8 @@ public final class FragmentGameOnBinding implements ViewBinding {
       }
 
       return new FragmentGameOnBinding((RelativeLayout) rootView, btnButRed, btnButYellow,
-          layoutWaitingPlayersZone, redTeamAtq, redTeamDef, scrollWaitingPlayers, yellowTeamAtq,
-          yellowTeamDef);
+          btnGoScore, layoutWaitingPlayersZone, redTeamAtq, redTeamDef, scrollWaitingPlayers,
+          yellowTeamAtq, yellowTeamDef);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

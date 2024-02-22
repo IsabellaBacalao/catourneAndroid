@@ -3016,6 +3016,7 @@ drawable background
 drawable background_home
 drawable background_on_game
 drawable background_players
+drawable background_score
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3026,6 +3027,7 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable but_jaune
 drawable but_rouge
+drawable but_score
 drawable button_play
 drawable design_fab_background
 drawable design_ic_visibility
@@ -3193,6 +3195,7 @@ id action_choixDesJoueurs_to_gameOn
 id action_container
 id action_context_bar
 id action_divider
+id action_gameOn_to_score
 id action_homepage_to_choixDesJoueurs
 id action_image
 id action_menu_divider
@@ -3235,6 +3238,7 @@ id bounceStart
 id btnButRed
 id btnButYellow
 id btnFragmentChoixDesJoueurs
+id btnGoScore
 id btnStartAGame
 id buttonPanel
 id button_add_player
@@ -3376,6 +3380,8 @@ id jumpToEnd
 id jumpToStart
 id labeled
 id layout
+id layout_best_players
+id layout_players_score
 id layout_players_zone
 id layout_waiting_players_zone
 id left
@@ -3524,6 +3530,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id score
 id screen
 id scroll
 id scrollIndicatorDown
@@ -3789,6 +3796,7 @@ layout design_text_input_start_icon
 layout fragment_choix_des_joueurs
 layout fragment_game_on
 layout fragment_home
+layout fragment_score
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout m3_alert_dialog

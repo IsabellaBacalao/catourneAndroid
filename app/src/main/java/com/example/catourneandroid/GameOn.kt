@@ -9,11 +9,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.example.catourneandroid.database.entity.UserEntity
 
 class GameOn : Fragment() {
@@ -25,10 +27,9 @@ class GameOn : Fragment() {
         val view = inflater.inflate(R.layout.fragment_game_on, container, false)
 
         userViewModel.allUsers.observe(viewLifecycleOwner, Observer { users ->
-            if(firstAppear == 0){
-                displayPseudosByTeamAndWaitingList(view, users)
-                firstAppear = 1
-            }
+
+            displayPseudosByTeamAndWaitingList(view, users)
+
             val btnPointForYellow = view.findViewById<ImageButton>(R.id.btnButYellow)
             btnPointForYellow.setOnClickListener{
                 changeOfPlayersRedTeam(users)
@@ -42,6 +43,11 @@ class GameOn : Fragment() {
             }
         })
         userViewModel.getAllUsers()
+
+        val btnGoSeeScore = view.findViewById<ImageButton>(R.id.btnGoScore)
+        btnGoSeeScore.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_gameOn_to_score)
+        }
 
         return view
     }
@@ -190,6 +196,7 @@ class GameOn : Fragment() {
                     waitingPlayer.setTextColor(R.color.white)
                     waitingPlayer.gravity = Gravity.CENTER
                     waitingPlayer.textSize = 20F
+                    waitingPlayer.isAllCaps = true
                     waitingPlayer.setTextAppearance(R.style.PlayersListStyle)
                     layoutWaitingPlayers.addView(waitingPlayer)
                 }
@@ -197,4 +204,5 @@ class GameOn : Fragment() {
         }
 
     }
+
 }
