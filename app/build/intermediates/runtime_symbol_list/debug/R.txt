@@ -3015,6 +3015,7 @@ int drawable background 0x7f07007a
 int drawable background_home 0x7f07007b
 int drawable background_on_game 0x7f07007c
 int drawable background_players 0x7f07007d
+int drawable background_score 0x7f0700f0
 int drawable btn_checkbox_checked_mtrl 0x7f07007e
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f07007f
 int drawable btn_checkbox_unchecked_mtrl 0x7f070080
@@ -3025,6 +3026,7 @@ int drawable btn_radio_on_mtrl 0x7f070084
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f070085
 int drawable but_jaune 0x7f070086
 int drawable but_rouge 0x7f070087
+int drawable but_score 0x7f0700f1
 int drawable button_play 0x7f070088
 int drawable design_fab_background 0x7f070089
 int drawable design_ic_visibility 0x7f07008a
@@ -3192,6 +3194,7 @@ int id action_choixDesJoueurs_to_gameOn 0x7f08003b
 int id action_container 0x7f08003c
 int id action_context_bar 0x7f08003d
 int id action_divider 0x7f08003e
+int id action_gameOn_to_score 0x7f08020d
 int id action_homepage_to_choixDesJoueurs 0x7f08003f
 int id action_image 0x7f080040
 int id action_menu_divider 0x7f080041
@@ -3234,6 +3237,7 @@ int id bounceStart 0x7f080065
 int id btnButRed 0x7f080066
 int id btnButYellow 0x7f080067
 int id btnFragmentChoixDesJoueurs 0x7f080068
+int id btnGoScore 0x7f08020e
 int id btnStartAGame 0x7f080069
 int id buttonPanel 0x7f08006a
 int id button_add_player 0x7f08006b
@@ -3375,6 +3379,8 @@ int id jumpToEnd 0x7f0800f2
 int id jumpToStart 0x7f0800f3
 int id labeled 0x7f0800f4
 int id layout 0x7f0800f5
+int id layout_best_players 0x7f080212
+int id layout_players_score 0x7f080210
 int id layout_players_zone 0x7f0800f6
 int id layout_waiting_players_zone 0x7f0800f7
 int id left 0x7f0800f8
@@ -3523,6 +3529,7 @@ int id save_non_transition_alpha 0x7f080186
 int id save_overlay_view 0x7f080187
 int id sawtooth 0x7f080188
 int id scale 0x7f080189
+int id score 0x7f08020f
 int id screen 0x7f08018a
 int id scroll 0x7f08018b
 int id scrollIndicatorDown 0x7f08018c
@@ -3788,6 +3795,7 @@ int layout design_text_input_start_icon 0x7f0b002c
 int layout fragment_choix_des_joueurs 0x7f0b002d
 int layout fragment_game_on 0x7f0b002e
 int layout fragment_home 0x7f0b002f
+int layout fragment_score 0x7f0b006f
 int layout ime_base_split_test_activity 0x7f0b0030
 int layout ime_secondary_split_test_activity 0x7f0b0031
 int layout m3_alert_dialog 0x7f0b0032
