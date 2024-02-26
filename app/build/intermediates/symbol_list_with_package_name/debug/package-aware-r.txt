@@ -2119,6 +2119,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -3323,6 +3324,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id errorNbPlayers
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3378,6 +3380,7 @@ id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
+id konfettiView
 id labeled
 id layout
 id layout_best_players
@@ -5326,4 +5329,5 @@ styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable ViewTransition android_id SharedValue SharedValueId clearsTag duration ifTagNotSet ifTagSet motionInterpolator motionTarget onStateTransition pathMotionArc setsTag transitionDisable upDuration viewTransitionMode
 styleable include constraintSet
 xml backup_rules
+xml challenger_scene
 xml data_extraction_rules

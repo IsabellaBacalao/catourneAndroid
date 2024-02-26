@@ -44,12 +44,16 @@
         "source": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
+        "merged": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_but_jaune.png.flat",
+        "source": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/but_jaune.png"
+    },
+    {
         "merged": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_but_rouge.png.flat",
         "source": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/but_rouge.png"
     },
     {
-        "merged": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_but_jaune.png.flat",
-        "source": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/but_jaune.png"
+        "merged": "com.example.catourneandroid.app-merged_res-49:/layout_fragment_choix_des_joueurs.xml.flat",
+        "source": "com.example.catourneandroid.app-main-51:/layout/fragment_choix_des_joueurs.xml"
     },
     {
         "merged": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/mipmap-hdpi_ic_launcher_round.webp.flat",
@@ -60,16 +64,16 @@
         "source": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.example.catourneandroid.app-merged_res-49:/layout_fragment_score.xml.flat",
-        "source": "com.example.catourneandroid.app-main-51:/layout/fragment_score.xml"
-    },
-    {
         "merged": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_background_home.jpg.flat",
         "source": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/background_home.jpg"
     },
     {
         "merged": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/drawable_home_button.png.flat",
         "source": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/drawable/home_button.png"
+    },
+    {
+        "merged": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/xml_challenger_scene.xml.flat",
+        "source": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/xml/challenger_scene.xml"
     },
     {
         "merged": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-merged_res-49:/navigation_nav_graph_home.xml.flat",

@@ -17,6 +17,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.example.catourneandroid.database.entity.UserEntity
+import nl.dionsegijn.konfetti.core.Party
+import nl.dionsegijn.konfetti.core.Position
+import nl.dionsegijn.konfetti.core.emitter.Emitter
+import nl.dionsegijn.konfetti.xml.KonfettiView
+import java.util.concurrent.TimeUnit
 
 class GameOn : Fragment() {
 
@@ -32,13 +37,13 @@ class GameOn : Fragment() {
 
             val btnPointForYellow = view.findViewById<ImageButton>(R.id.btnButYellow)
             btnPointForYellow.setOnClickListener{
-                changeOfPlayersRedTeam(users)
+                changeOfPlayersRedTeam(users, view)
                 displayPseudosByTeamAndWaitingList(view, users)
             }
 
             val btnPointForRed = view.findViewById<ImageButton>(R.id.btnButRed)
             btnPointForRed.setOnClickListener{
-                changeOfPlayersYellowTeam(users)
+                changeOfPlayersYellowTeam(users, view)
                 displayPseudosByTeamAndWaitingList(view, users)
             }
         })
@@ -51,7 +56,21 @@ class GameOn : Fragment() {
 
         return view
     }
-    private fun changeOfPlayersYellowTeam(users: List<UserEntity>){
+    private fun changeOfPlayersYellowTeam(users: List<UserEntity>, view: View){
+
+        val viewKonfetti = view.findViewById<KonfettiView>(R.id.konfettiView)
+        //KONFETTI
+        val party = Party(
+            speed = 0f,
+            maxSpeed = 30f,
+            damping = 0.9f,
+            spread = 360,
+            colors = listOf(0xFF5733, 0xA1280E, 0xE18471, 0xEA2F45),
+            emitter = Emitter(duration = 100, TimeUnit.MILLISECONDS).max(100),
+            position = Position.Relative(0.5, 0.3)
+        )
+        viewKonfetti.start(party)
+
 
         val waiting = users.filter { it.idTeam == 5 }
         val maxIdTeam = waiting.maxByOrNull { it.userPosition }?.userPosition
@@ -67,43 +86,60 @@ class GameOn : Fragment() {
 
         //CHANGE POSITION OF THE PLAYERS
         val yellowTeamDes = yellowTeam.sortedByDescending { it.idTeam }
-        for (user in yellowTeamDes){
-            if(user.idTeam == 2){
-                //UPDATE ID TEAM == > 5
-                user.idTeam = 5;
-                userViewModel.updateIdTeamByUserId(user);
-                if (maxIdTeam != null) {
-                    user.userPosition = maxIdTeam
-                };
-                userViewModel.updatePositionUser(user);
-            }
-            if (user.idTeam == 1){
-                //UPDATE ID TEAM == > 2
-                user.idTeam = 2;
-                userViewModel.updateIdTeamByUserId(user);
-            }
-        }
-        for (user in waiting){
-            if(user.idTeam == 5){
-                if(user.userPosition == 1){
-                    // PREMIER DE LA WAITING LIST ENTRE EN JEU
-                    // ID TEAM == > 1
-                    user.idTeam = 1;
+
+        if (waiting.isNotEmpty()){
+            for (user in yellowTeamDes){
+                if(user.idTeam == 2){
+                    //UPDATE ID TEAM == > 5
+                    user.idTeam = 5;
                     userViewModel.updateIdTeamByUserId(user);
-                    // POSITION ID == > 0
-                    user.userPosition = 0;
-                    userViewModel.updatePositionUser(user);
-                }else{
-                    // CHANGEMENT POSITION ID
-                    // user.userPosition == > position-1
-                    user.userPosition -= 1;
+                    if (maxIdTeam != null) {
+                        user.userPosition = maxIdTeam
+                    };
                     userViewModel.updatePositionUser(user);
                 }
+                if (user.idTeam == 1){
+                    //UPDATE ID TEAM == > 2
+                    user.idTeam = 2;
+                    userViewModel.updateIdTeamByUserId(user);
+                }
             }
+            for (user in waiting){
+                if(user.idTeam == 5){
+                    if(user.userPosition == 1){
+                        // PREMIER DE LA WAITING LIST ENTRE EN JEU
+                        // ID TEAM == > 1
+                        user.idTeam = 1;
+                        userViewModel.updateIdTeamByUserId(user);
+                        // POSITION ID == > 0
+                        user.userPosition = 0;
+                        userViewModel.updatePositionUser(user);
+                    }else{
+                        // CHANGEMENT POSITION ID
+                        // user.userPosition == > position-1
+                        user.userPosition -= 1;
+                        userViewModel.updatePositionUser(user);
+                    }
+                }
 
+            }
         }
+
     }
-    private fun changeOfPlayersRedTeam(users: List<UserEntity>){
+    private fun changeOfPlayersRedTeam(users: List<UserEntity>, view: View){
+
+        val viewKonfetti = view.findViewById<KonfettiView>(R.id.konfettiView)
+        //KONFETTI
+        val party = Party(
+            speed = 0f,
+            maxSpeed = 30f,
+            damping = 0.9f,
+            spread = 360,
+            colors = listOf(0xF0D71D, 0xF3E835, 0xF9F205, 0xF3EFA0),
+            emitter = Emitter(duration = 100, TimeUnit.MILLISECONDS).max(100),
+            position = Position.Relative(0.5, 0.3)
+        )
+        viewKonfetti.start(party)
 
         val waiting = users.filter { it.idTeam == 5 }
         val maxIdTeam = waiting.maxByOrNull { it.userPosition }?.userPosition
@@ -117,44 +153,47 @@ class GameOn : Fragment() {
         }
 
         //CHANGE POSITION OF THE PLAYERS
-        val redTeamDes = redTeam.sortedByDescending { it.idTeam }
-        for (user in redTeamDes){
-            if(user.idTeam == 4){
-                //UPDATE ID TEAM == > 4
-                user.idTeam = 5;
-                userViewModel.updateIdTeamByUserId(user);
-                if (maxIdTeam != null) {
-                    user.userPosition = maxIdTeam
-                };
-                userViewModel.updatePositionUser(user);
-            }
-            if (user.idTeam == 3){
-                //UPDATE ID TEAM == > 4
-                user.idTeam = 4;
-                userViewModel.updateIdTeamByUserId(user);
-            }
-        }
-        //ADD SCORE TO THE PLAYERS OF RED TEAM
-
-        for (user in waiting){
-            if(user.idTeam == 5){
-                if(user.userPosition == 1){
-                    // PREMIER DE LA WAITING LIST ENTRE EN JEU
-                    // ID TEAM == > 3
-                    user.idTeam = 3;
+        if (waiting.isNotEmpty()){
+            val redTeamDes = redTeam.sortedByDescending { it.idTeam }
+            for (user in redTeamDes){
+                if(user.idTeam == 4){
+                    //UPDATE ID TEAM == > 4
+                    user.idTeam = 5;
                     userViewModel.updateIdTeamByUserId(user);
-                    // POSITION ID == > 0
-                    user.userPosition = 0;
-                    userViewModel.updatePositionUser(user);
-                }else{
-                    // CHANGEMENT POSITION ID
-                    // user.userPosition == > position-1
-                    user.userPosition -= 1;
+                    if (maxIdTeam != null) {
+                        user.userPosition = maxIdTeam
+                    };
                     userViewModel.updatePositionUser(user);
                 }
+                if (user.idTeam == 3){
+                    //UPDATE ID TEAM == > 4
+                    user.idTeam = 4;
+                    userViewModel.updateIdTeamByUserId(user);
+                }
             }
+            //ADD SCORE TO THE PLAYERS OF RED TEAM
 
+            for (user in waiting){
+                if(user.idTeam == 5){
+                    if(user.userPosition == 1){
+                        // PREMIER DE LA WAITING LIST ENTRE EN JEU
+                        // ID TEAM == > 3
+                        user.idTeam = 3;
+                        userViewModel.updateIdTeamByUserId(user);
+                        // POSITION ID == > 0
+                        user.userPosition = 0;
+                        userViewModel.updatePositionUser(user);
+                    }else{
+                        // CHANGEMENT POSITION ID
+                        // user.userPosition == > position-1
+                        user.userPosition -= 1;
+                        userViewModel.updatePositionUser(user);
+                    }
+                }
+
+            }
         }
+
     }
     @SuppressLint("ResourceAsColor")
     private fun displayPseudosByTeamAndWaitingList(view: View, users: List<UserEntity>){

@@ -2118,6 +2118,7 @@ int color primary_text_default_material_dark 0x7f0502f5
 int color primary_text_default_material_light 0x7f0502f6
 int color primary_text_disabled_material_dark 0x7f0502f7
 int color primary_text_disabled_material_light 0x7f0502f8
+int color red 0x7f050308
 int color ripple_material_dark 0x7f0502f9
 int color ripple_material_light 0x7f0502fa
 int color secondary_text_default_material_dark 0x7f0502fb
@@ -3322,6 +3323,7 @@ int id end 0x7f0800b9
 int id endToStart 0x7f0800ba
 int id enterAlways 0x7f0800bb
 int id enterAlwaysCollapsed 0x7f0800bc
+int id errorNbPlayers 0x7f080214
 int id exitUntilCollapsed 0x7f0800bd
 int id expand_activities_button 0x7f0800be
 int id expanded_menu 0x7f0800bf
@@ -3377,6 +3379,7 @@ int id italic 0x7f0800f0
 int id item_touch_helper_previous_elevation 0x7f0800f1
 int id jumpToEnd 0x7f0800f2
 int id jumpToStart 0x7f0800f3
+int id konfettiView 0x7f080213
 int id labeled 0x7f0800f4
 int id layout 0x7f0800f5
 int id layout_best_players 0x7f080212
@@ -7299,4 +7302,5 @@ int styleable ViewTransition_viewTransitionMode 14
 int[] styleable include { 0x7f030138 }
 int styleable include_constraintSet 0
 int xml backup_rules 0x7f130000
+int xml challenger_scene 0x7f130002
 int xml data_extraction_rules 0x7f130001

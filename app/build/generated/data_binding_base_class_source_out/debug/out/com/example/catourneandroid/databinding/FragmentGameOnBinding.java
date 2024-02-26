@@ -17,6 +17,7 @@ import com.example.catourneandroid.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
+import nl.dionsegijn.konfetti.xml.KonfettiView;
 
 public final class FragmentGameOnBinding implements ViewBinding {
   @NonNull
@@ -30,6 +31,9 @@ public final class FragmentGameOnBinding implements ViewBinding {
 
   @NonNull
   public final ImageButton btnGoScore;
+
+  @NonNull
+  public final KonfettiView konfettiView;
 
   @NonNull
   public final LinearLayout layoutWaitingPlayersZone;
@@ -51,13 +55,15 @@ public final class FragmentGameOnBinding implements ViewBinding {
 
   private FragmentGameOnBinding(@NonNull RelativeLayout rootView, @NonNull ImageButton btnButRed,
       @NonNull ImageButton btnButYellow, @NonNull ImageButton btnGoScore,
-      @NonNull LinearLayout layoutWaitingPlayersZone, @NonNull TextView redTeamAtq,
-      @NonNull TextView redTeamDef, @NonNull ScrollView scrollWaitingPlayers,
-      @NonNull TextView yellowTeamAtq, @NonNull TextView yellowTeamDef) {
+      @NonNull KonfettiView konfettiView, @NonNull LinearLayout layoutWaitingPlayersZone,
+      @NonNull TextView redTeamAtq, @NonNull TextView redTeamDef,
+      @NonNull ScrollView scrollWaitingPlayers, @NonNull TextView yellowTeamAtq,
+      @NonNull TextView yellowTeamDef) {
     this.rootView = rootView;
     this.btnButRed = btnButRed;
     this.btnButYellow = btnButYellow;
     this.btnGoScore = btnGoScore;
+    this.konfettiView = konfettiView;
     this.layoutWaitingPlayersZone = layoutWaitingPlayersZone;
     this.redTeamAtq = redTeamAtq;
     this.redTeamDef = redTeamDef;
@@ -111,6 +117,12 @@ public final class FragmentGameOnBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.konfettiView;
+      KonfettiView konfettiView = ViewBindings.findChildViewById(rootView, id);
+      if (konfettiView == null) {
+        break missingId;
+      }
+
       id = R.id.layout_waiting_players_zone;
       LinearLayout layoutWaitingPlayersZone = ViewBindings.findChildViewById(rootView, id);
       if (layoutWaitingPlayersZone == null) {
@@ -148,8 +160,8 @@ public final class FragmentGameOnBinding implements ViewBinding {
       }
 
       return new FragmentGameOnBinding((RelativeLayout) rootView, btnButRed, btnButYellow,
-          btnGoScore, layoutWaitingPlayersZone, redTeamAtq, redTeamDef, scrollWaitingPlayers,
-          yellowTeamAtq, yellowTeamDef);
+          btnGoScore, konfettiView, layoutWaitingPlayersZone, redTeamAtq, redTeamDef,
+          scrollWaitingPlayers, yellowTeamAtq, yellowTeamDef);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

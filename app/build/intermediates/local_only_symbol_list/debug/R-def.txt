@@ -5,6 +5,7 @@ color color_background_frag_choix_des_joueurs
 color color_background_frag_home
 color color_background_players_zone
 color color_button_begin
+color red
 color white
 drawable background
 drawable background_home
@@ -31,10 +32,13 @@ id btnGoScore
 id btnStartAGame
 id button_add_player
 id choixDesJoueurs
+id end
+id errorNbPlayers
 id fragmentContainer
 id gameOn
 id homepage
 id input_text_players
+id konfettiView
 id layout_best_players
 id layout_players_score
 id layout_players_zone
@@ -44,6 +48,7 @@ id red_team_atq
 id red_team_def
 id score
 id scroll_waiting_players
+id start
 id yellow_team_atq
 id yellow_team_def
 layout activity_main
@@ -65,4 +70,5 @@ style Base.Theme.CatourneAndroid
 style PlayersListStyle
 style Theme.CatourneAndroid
 xml backup_rules
+xml challenger_scene
 xml data_extraction_rules
