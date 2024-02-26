@@ -66,7 +66,7 @@ class ChoixDesJoueurs : Fragment() {
             viewPlayer.layoutParams = params
             viewPlayer.text = namePlayer
             viewPlayer.setBackgroundResource(R.drawable.rounded_bg)
-            viewPlayer.setPadding(5,5,5,5)
+            viewPlayer.setPadding(15,8,15,8)
             viewPlayer.setTextAppearance(R.style.PlayersListStyle)
             viewPlayer.setHorizontallyScrolling(true)
             layoutPlayers.addView(viewPlayer)

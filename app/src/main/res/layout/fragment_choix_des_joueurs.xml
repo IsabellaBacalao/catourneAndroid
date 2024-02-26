@@ -34,7 +34,7 @@
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="256dp"
         android:layout_toStartOf="@+id/button_add_player"
-        android:hint="@string/input"
+        android:hint="Ici"
         android:importantForAutofill="no"
         android:inputType="textShortMessage"
         android:textColor="@color/white"
