@@ -48,6 +48,7 @@ id red_team_atq
 id red_team_def
 id score
 id scroll_waiting_players
+id scroll_winners_players
 id start
 id yellow_team_atq
 id yellow_team_def

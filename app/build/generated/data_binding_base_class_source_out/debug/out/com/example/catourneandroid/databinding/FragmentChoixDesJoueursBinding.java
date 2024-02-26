@@ -10,6 +10,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -33,6 +34,9 @@ public final class FragmentChoixDesJoueursBinding implements ViewBinding {
   public final ImageButton buttonAddPlayer;
 
   @NonNull
+  public final TextView errorNbPlayers;
+
+  @NonNull
   public final EditText inputTextPlayers;
 
   @NonNull
@@ -40,12 +44,13 @@ public final class FragmentChoixDesJoueursBinding implements ViewBinding {
 
   private FragmentChoixDesJoueursBinding(@NonNull RelativeLayout rootView,
       @NonNull HorizontalScrollView ScrollViewPlayers, @NonNull Button btnStartAGame,
-      @NonNull ImageButton buttonAddPlayer, @NonNull EditText inputTextPlayers,
-      @NonNull LinearLayout layoutPlayersZone) {
+      @NonNull ImageButton buttonAddPlayer, @NonNull TextView errorNbPlayers,
+      @NonNull EditText inputTextPlayers, @NonNull LinearLayout layoutPlayersZone) {
     this.rootView = rootView;
     this.ScrollViewPlayers = ScrollViewPlayers;
     this.btnStartAGame = btnStartAGame;
     this.buttonAddPlayer = buttonAddPlayer;
+    this.errorNbPlayers = errorNbPlayers;
     this.inputTextPlayers = inputTextPlayers;
     this.layoutPlayersZone = layoutPlayersZone;
   }
@@ -95,6 +100,12 @@ public final class FragmentChoixDesJoueursBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.errorNbPlayers;
+      TextView errorNbPlayers = ViewBindings.findChildViewById(rootView, id);
+      if (errorNbPlayers == null) {
+        break missingId;
+      }
+
       id = R.id.input_text_players;
       EditText inputTextPlayers = ViewBindings.findChildViewById(rootView, id);
       if (inputTextPlayers == null) {
@@ -108,7 +119,7 @@ public final class FragmentChoixDesJoueursBinding implements ViewBinding {
       }
 
       return new FragmentChoixDesJoueursBinding((RelativeLayout) rootView, ScrollViewPlayers,
-          btnStartAGame, buttonAddPlayer, inputTextPlayers, layoutPlayersZone);
+          btnStartAGame, buttonAddPlayer, errorNbPlayers, inputTextPlayers, layoutPlayersZone);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

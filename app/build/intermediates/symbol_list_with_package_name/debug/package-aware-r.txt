@@ -3540,6 +3540,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scroll_waiting_players
+id scroll_winners_players
 id scrollable
 id search_badge
 id search_bar

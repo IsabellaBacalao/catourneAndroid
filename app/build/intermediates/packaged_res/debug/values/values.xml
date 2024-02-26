@@ -5,6 +5,7 @@
     <color name="color_background_frag_home">#7542f5</color>
     <color name="color_background_players_zone">#7AFDF9F9</color>
     <color name="color_button_begin">#A16895D7</color>
+    <color name="red">#B30E21</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">catourneAndroid</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
