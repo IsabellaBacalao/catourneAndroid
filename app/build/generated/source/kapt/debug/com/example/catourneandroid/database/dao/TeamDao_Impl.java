@@ -66,7 +66,7 @@ public final class TeamDao_Impl implements TeamDao {
   }
 
   @Override
-  public Object insertTeam(final TeamEntity team, final Continuation<? super Unit> arg1) {
+  public Object insertTeam(final TeamEntity team, final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -80,12 +80,12 @@ public final class TeamDao_Impl implements TeamDao {
           __db.endTransaction();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @Override
   public Object updateTeamById(final int teamId, final int newPosition,
-      final Continuation<? super Unit> arg2) {
+      final Continuation<? super Unit> $completion) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       @NonNull
@@ -108,11 +108,11 @@ public final class TeamDao_Impl implements TeamDao {
           __preparedStmtOfUpdateTeamById.release(_stmt);
         }
       }
-    }, arg2);
+    }, $completion);
   }
 
   @Override
-  public Object getAllTeams(final Continuation<? super List<TeamEntity>> arg0) {
+  public Object getAllTeams(final Continuation<? super List<TeamEntity>> $completion) {
     final String _sql = "SELECT * FROM TeamEntity";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
@@ -147,11 +147,11 @@ public final class TeamDao_Impl implements TeamDao {
           _statement.release();
         }
       }
-    }, arg0);
+    }, $completion);
   }
 
   @Override
-  public Object getTeamById(final int teamId, final Continuation<? super TeamEntity> arg1) {
+  public Object getTeamById(final int teamId, final Continuation<? super TeamEntity> $completion) {
     final String _sql = "SELECT * FROM TeamEntity WHERE idTeam = ? LIMIT 1";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
@@ -188,7 +188,7 @@ public final class TeamDao_Impl implements TeamDao {
           _statement.release();
         }
       }
-    }, arg1);
+    }, $completion);
   }
 
   @NonNull

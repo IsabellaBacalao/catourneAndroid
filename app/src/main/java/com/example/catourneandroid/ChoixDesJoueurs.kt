@@ -24,11 +24,13 @@ class ChoixDesJoueurs : Fragment() {
     private val userViewModel: UserViewModel by viewModels(factoryProducer = { UserViewModel.provideFactory() })
     private var count = 1;
     private var attentePosition = 1;
+    private var nbPlayers = 0;
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view: View = inflater.inflate(R.layout.fragment_choix_des_joueurs, container, false)
 
+        val erreurNbPlayers = view.findViewById<TextView>(R.id.errorNbPlayers)
         val inputPlayers = view.findViewById<EditText>(R.id.input_text_players)
         val btnNewPlayer = view.findViewById<ImageButton>(R.id.button_add_player)
         val layoutPlayers = view.findViewById<LinearLayout>(R.id.layout_players_zone)
@@ -56,32 +58,34 @@ class ChoixDesJoueurs : Fragment() {
         //Add a new Player at the game
         btnNewPlayer.setOnClickListener {
             val namePlayer = inputPlayers.text.toString();
-            val viewPlayer = TextView(context)
+            if (namePlayer != ""){
+                nbPlayers += 1
+                val viewPlayer = TextView(context)
+                viewPlayer.layoutParams = ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
 
-            viewPlayer.layoutParams = ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-            )
+                viewPlayer.layoutParams = params
+                viewPlayer.text = namePlayer
+                viewPlayer.setBackgroundResource(R.drawable.rounded_bg)
+                viewPlayer.setPadding(15,8,15,8)
+                viewPlayer.setTextAppearance(R.style.PlayersListStyle)
+                viewPlayer.setHorizontallyScrolling(true)
+                layoutPlayers.addView(viewPlayer)
+                inputPlayers.setText("");
 
-            viewPlayer.layoutParams = params
-            viewPlayer.text = namePlayer
-            viewPlayer.setBackgroundResource(R.drawable.rounded_bg)
-            viewPlayer.setPadding(15,8,15,8)
-            viewPlayer.setTextAppearance(R.style.PlayersListStyle)
-            viewPlayer.setHorizontallyScrolling(true)
-            layoutPlayers.addView(viewPlayer)
-            inputPlayers.setText("");
+                //AJOUT DANS UNE TEAM
+                if(count > 4) {
+                    val user = UserEntity(pseudo = namePlayer, userPosition = attentePosition, idTeam = 5)
+                    userViewModel.insertUser(user)
+                    attentePosition +=1;
 
-            //AJOUT DANS UNE TEAM
-            if(count > 4) {
-                val user = UserEntity(pseudo = namePlayer, userPosition = attentePosition, idTeam = 5)
-                userViewModel.insertUser(user)
-                attentePosition +=1;
-
-            }else {
-                val user = UserEntity(pseudo = namePlayer, userPosition = 0, idTeam = count)
-                userViewModel.insertUser(user)
-                count += 1
+                }else {
+                    val user = UserEntity(pseudo = namePlayer, userPosition = 0, idTeam = count)
+                    userViewModel.insertUser(user)
+                    count += 1
+                }
             }
         }
 
@@ -89,7 +93,13 @@ class ChoixDesJoueurs : Fragment() {
         val btnStartAGame= view.findViewById<Button>(R.id.btnStartAGame)
 
         btnStartAGame.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_choixDesJoueurs_to_gameOn)
+            if( nbPlayers >= 4){
+                Navigation.findNavController(view).navigate(R.id.action_choixDesJoueurs_to_gameOn)
+                erreurNbPlayers.visibility = View.INVISIBLE;
+
+            }else{
+                erreurNbPlayers.visibility = View.VISIBLE;
+            }
         }
 
 

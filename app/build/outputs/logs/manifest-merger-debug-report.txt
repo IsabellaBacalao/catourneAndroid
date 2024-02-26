@@ -50,8 +50,10 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2] /Users/mic
 MERGED from [androidx.core:core-ktx:1.12.0] /Users/michl/.gradle/caches/transforms-3/ff6587493ebdc791c50ad8995c78d2de/transformed/core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/michl/.gradle/caches/transforms-3/72616146986b29e55bbb83e3d42d6d2f/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.room:room-ktx:2.6.1] /Users/michl/.gradle/caches/transforms-3/ca0b416350434a734b941ca4319ffc37/transformed/room-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [nl.dionsegijn:konfetti-xml:2.0.4] /Users/michl/.gradle/caches/transforms-3/052e4ba55f5650e5765533cffc0d3653/transformed/konfetti-xml-2.0.4/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/michl/.gradle/caches/transforms-3/3b963670922fdcee5d35e791910d98aa/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/michl/.gradle/caches/transforms-3/0b1a50a8af22d8748a0b11b7609b76e7/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [nl.dionsegijn:konfetti-core:2.0.4] /Users/michl/.gradle/caches/transforms-3/8a875cf988c9f0df8c9a35f76ac6a876/transformed/konfetti-core-2.0.4/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/michl/.gradle/caches/transforms-3/53e201e1c519ef1807304d065a17ebc1/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/michl/.gradle/caches/transforms-3/85968db88edcf3bb1a8ca9d1d120de35/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/michl/.gradle/caches/transforms-3/425c79b41c5100e4c9e6d62d316150ce/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -231,10 +233,14 @@ MERGED from [androidx.room:room-runtime:2.6.1] /Users/michl/.gradle/caches/trans
 MERGED from [androidx.room:room-runtime:2.6.1] /Users/michl/.gradle/caches/transforms-3/72616146986b29e55bbb83e3d42d6d2f/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
 MERGED from [androidx.room:room-ktx:2.6.1] /Users/michl/.gradle/caches/transforms-3/ca0b416350434a734b941ca4319ffc37/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.room:room-ktx:2.6.1] /Users/michl/.gradle/caches/transforms-3/ca0b416350434a734b941ca4319ffc37/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [nl.dionsegijn:konfetti-xml:2.0.4] /Users/michl/.gradle/caches/transforms-3/052e4ba55f5650e5765533cffc0d3653/transformed/konfetti-xml-2.0.4/AndroidManifest.xml:5:5-44
+MERGED from [nl.dionsegijn:konfetti-xml:2.0.4] /Users/michl/.gradle/caches/transforms-3/052e4ba55f5650e5765533cffc0d3653/transformed/konfetti-xml-2.0.4/AndroidManifest.xml:5:5-44
 MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/michl/.gradle/caches/transforms-3/3b963670922fdcee5d35e791910d98aa/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /Users/michl/.gradle/caches/transforms-3/3b963670922fdcee5d35e791910d98aa/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/michl/.gradle/caches/transforms-3/0b1a50a8af22d8748a0b11b7609b76e7/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite:2.4.0] /Users/michl/.gradle/caches/transforms-3/0b1a50a8af22d8748a0b11b7609b76e7/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [nl.dionsegijn:konfetti-core:2.0.4] /Users/michl/.gradle/caches/transforms-3/8a875cf988c9f0df8c9a35f76ac6a876/transformed/konfetti-core-2.0.4/AndroidManifest.xml:5:5-44
+MERGED from [nl.dionsegijn:konfetti-core:2.0.4] /Users/michl/.gradle/caches/transforms-3/8a875cf988c9f0df8c9a35f76ac6a876/transformed/konfetti-core-2.0.4/AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/michl/.gradle/caches/transforms-3/53e201e1c519ef1807304d065a17ebc1/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/michl/.gradle/caches/transforms-3/53e201e1c519ef1807304d065a17ebc1/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/michl/.gradle/caches/transforms-3/85968db88edcf3bb1a8ca9d1d120de35/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44

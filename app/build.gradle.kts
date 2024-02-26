@@ -74,5 +74,8 @@ dependencies {
 
     implementation ("androidx.activity:activity-ktx:1.3.1")
 
+    implementation ("nl.dionsegijn:konfetti-xml:2.0.4")
+
+
 
 }

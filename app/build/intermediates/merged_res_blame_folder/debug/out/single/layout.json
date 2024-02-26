@@ -4,8 +4,8 @@
         "source": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-main-51:/layout/fragment_choix_des_joueurs.xml"
     },
     {
-        "merged": "com.example.catourneandroid.app-mergeDebugResources-48:/layout/fragment_score.xml",
-        "source": "com.example.catourneandroid.app-main-51:/layout/fragment_score.xml"
+        "merged": "com.example.catourneandroid.app-mergeDebugResources-48:/layout/fragment_choix_des_joueurs.xml",
+        "source": "com.example.catourneandroid.app-main-51:/layout/fragment_choix_des_joueurs.xml"
     },
     {
         "merged": "/Users/michl/.gradle/daemon/8.2/com.example.catourneandroid.app-mergeDebugResources-48:/layout/activity_main.xml",
