@@ -4,7 +4,7 @@
             "outputFile": "com.example.catourneandroid.app-mergeDebugResources-47:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/michl/.gradle/caches/transforms-3/60b492a510ec931c8abbf232e0a5612c/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
+                    "source": "/Users/mac-IBACAL31/.gradle/caches/transforms-3/60b492a510ec931c8abbf232e0a5612c/transformed/appcompat-1.6.1/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/michl/.gradle/caches/transforms-3/56af212e940d1f2bde023f0cf7bfa9c5/transformed/material-1.11.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/mac-IBACAL31/.gradle/caches/transforms-3/56af212e940d1f2bde023f0cf7bfa9c5/transformed/material-1.11.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",
