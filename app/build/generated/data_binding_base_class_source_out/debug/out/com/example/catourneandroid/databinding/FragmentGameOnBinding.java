@@ -24,10 +24,16 @@ public final class FragmentGameOnBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final ImageButton btnAddPlayers;
+
+  @NonNull
   public final ImageButton btnButRed;
 
   @NonNull
   public final ImageButton btnButYellow;
+
+  @NonNull
+  public final ImageButton btnGoHome;
 
   @NonNull
   public final ImageButton btnGoScore;
@@ -53,15 +59,18 @@ public final class FragmentGameOnBinding implements ViewBinding {
   @NonNull
   public final TextView yellowTeamDef;
 
-  private FragmentGameOnBinding(@NonNull RelativeLayout rootView, @NonNull ImageButton btnButRed,
-      @NonNull ImageButton btnButYellow, @NonNull ImageButton btnGoScore,
-      @NonNull KonfettiView konfettiView, @NonNull LinearLayout layoutWaitingPlayersZone,
-      @NonNull TextView redTeamAtq, @NonNull TextView redTeamDef,
-      @NonNull ScrollView scrollWaitingPlayers, @NonNull TextView yellowTeamAtq,
-      @NonNull TextView yellowTeamDef) {
+  private FragmentGameOnBinding(@NonNull RelativeLayout rootView,
+      @NonNull ImageButton btnAddPlayers, @NonNull ImageButton btnButRed,
+      @NonNull ImageButton btnButYellow, @NonNull ImageButton btnGoHome,
+      @NonNull ImageButton btnGoScore, @NonNull KonfettiView konfettiView,
+      @NonNull LinearLayout layoutWaitingPlayersZone, @NonNull TextView redTeamAtq,
+      @NonNull TextView redTeamDef, @NonNull ScrollView scrollWaitingPlayers,
+      @NonNull TextView yellowTeamAtq, @NonNull TextView yellowTeamDef) {
     this.rootView = rootView;
+    this.btnAddPlayers = btnAddPlayers;
     this.btnButRed = btnButRed;
     this.btnButYellow = btnButYellow;
+    this.btnGoHome = btnGoHome;
     this.btnGoScore = btnGoScore;
     this.konfettiView = konfettiView;
     this.layoutWaitingPlayersZone = layoutWaitingPlayersZone;
@@ -99,6 +108,12 @@ public final class FragmentGameOnBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnAddPlayers;
+      ImageButton btnAddPlayers = ViewBindings.findChildViewById(rootView, id);
+      if (btnAddPlayers == null) {
+        break missingId;
+      }
+
       id = R.id.btnButRed;
       ImageButton btnButRed = ViewBindings.findChildViewById(rootView, id);
       if (btnButRed == null) {
@@ -108,6 +123,12 @@ public final class FragmentGameOnBinding implements ViewBinding {
       id = R.id.btnButYellow;
       ImageButton btnButYellow = ViewBindings.findChildViewById(rootView, id);
       if (btnButYellow == null) {
+        break missingId;
+      }
+
+      id = R.id.btnGoHome;
+      ImageButton btnGoHome = ViewBindings.findChildViewById(rootView, id);
+      if (btnGoHome == null) {
         break missingId;
       }
 
@@ -159,9 +180,9 @@ public final class FragmentGameOnBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentGameOnBinding((RelativeLayout) rootView, btnButRed, btnButYellow,
-          btnGoScore, konfettiView, layoutWaitingPlayersZone, redTeamAtq, redTeamDef,
-          scrollWaitingPlayers, yellowTeamAtq, yellowTeamDef);
+      return new FragmentGameOnBinding((RelativeLayout) rootView, btnAddPlayers, btnButRed,
+          btnButYellow, btnGoHome, btnGoScore, konfettiView, layoutWaitingPlayersZone, redTeamAtq,
+          redTeamDef, scrollWaitingPlayers, yellowTeamAtq, yellowTeamDef);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

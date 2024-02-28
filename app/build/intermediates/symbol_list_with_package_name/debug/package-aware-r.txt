@@ -3029,6 +3029,7 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable but_jaune
 drawable but_rouge
 drawable but_score
+drawable button_new_player
 drawable button_play
 drawable design_fab_background
 drawable design_ic_visibility
@@ -3196,6 +3197,7 @@ id action_choixDesJoueurs_to_gameOn
 id action_container
 id action_context_bar
 id action_divider
+id action_gameOn_to_homepage
 id action_gameOn_to_score
 id action_homepage_to_choixDesJoueurs
 id action_image
@@ -3236,9 +3238,11 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnAddPlayers
 id btnButRed
 id btnButYellow
 id btnFragmentChoixDesJoueurs
+id btnGoHome
 id btnGoScore
 id btnStartAGame
 id buttonPanel
