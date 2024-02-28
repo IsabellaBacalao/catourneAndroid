@@ -53,6 +53,14 @@ class GameOn : Fragment() {
         btnGoSeeScore.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_gameOn_to_score)
         }
+        val btnAddNewPlayer = view.findViewById<ImageButton>(R.id.btnAddPlayers)
+        btnAddNewPlayer.setOnClickListener {
+            Navigation.findNavController(view).popBackStack()
+        }
+        val btnGoHome = view.findViewById<ImageButton>(R.id.btnGoHome)
+        btnGoHome.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_gameOn_to_homepage)
+        }
 
         return view
     }
